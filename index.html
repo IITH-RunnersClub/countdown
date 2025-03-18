@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IITH Half Marathon Countdown</title>
     <style>
-        /* Ensure Full-Screen Display Without Scrollbars */
+        /* Full-Screen Display Without Scrollbars */
         html, body {
             margin: 0;
             padding: 0;
@@ -23,7 +23,7 @@
         h2 {
             font-size: 24px;
             margin-bottom: 20px;
-            color: #fff; /* Ensure contrast on any background */
+            color: #fff; /* Ensures contrast */
         }
 
         .countdown-container {
@@ -33,6 +33,21 @@
             justify-content: center;
             max-width: 100vw;
             overflow: hidden; /* Prevents Google Sites extra scroll */
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .label {
+            font-size: 18px;
+            color: #fff; /* Ensures visibility */
+            font-weight: bold;
+            margin-bottom: 5px; /* Space between label and circle */
         }
 
         .circle-timer {
@@ -64,6 +79,7 @@
             stroke: url(#gradient-seconds);
         }
 
+        /* Fix: Keep Numbers Inside Circles */
         .flip-box {
             position: absolute;
             top: 50%;
@@ -71,35 +87,29 @@
             transform: translate(-50%, -50%);
             font-size: 50px;
             font-weight: bold;
-            color: #fff;
+            color: #333;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 110px;
-            height: 90px;
+            width: 120px;
+            height: 100px;
         }
 
         .flip-number {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 110px;
-            height: 90px;
+            width: 100px;
+            height: 80px;
             font-size: 55px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.7); /* Semi-transparent for readability */
             border-radius: 15px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             padding: 5px;
-        }
-
-        .flip-box .label {
-            font-size: 18px;
-            color: #fff; /* Ensures readability */
-            margin-top: 5px;
         }
 
         /* Responsive Design for Mobile */
@@ -117,13 +127,13 @@
             }
 
             .flip-box {
-                width: 90px;
+                width: 100px;
                 height: 70px;
                 font-size: 40px;
             }
 
             .flip-number {
-                width: 90px;
+                width: 100px;
                 height: 70px;
                 line-height: 70px;
                 font-size: 40px;
@@ -139,51 +149,59 @@
 
     <h2>Train Hard, Run Fast – IITH Half Marathon Countdown</h2>
     <div class="countdown-container">
-        <div class="circle-timer">
-            <svg width="180" height="180">
-                <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
-                <circle class="progress-circle" cx="90" cy="90" r="75" id="days-circle"></circle>
-            </svg>
-            <div class="flip-box" id="days">
-                <div class="flip-number">00</div>
-                <span class="label">Days</span>
+        <div class="countdown-item">
+            <div class="label">Days</div>
+            <div class="circle-timer">
+                <svg width="180" height="180">
+                    <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
+                    <circle class="progress-circle" cx="90" cy="90" r="75" id="days-circle"></circle>
+                </svg>
+                <div class="flip-box" id="days">
+                    <div class="flip-number">00</div>
+                </div>
             </div>
         </div>
-        <div class="circle-timer">
-            <svg width="180" height="180">
-                <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
-                <circle class="progress-circle" cx="90" cy="90" r="75" id="hours-circle"></circle>
-            </svg>
-            <div class="flip-box" id="hours">
-                <div class="flip-number">00</div>
-                <span class="label">Hours</span>
+        <div class="countdown-item">
+            <div class="label">Hours</div>
+            <div class="circle-timer">
+                <svg width="180" height="180">
+                    <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
+                    <circle class="progress-circle" cx="90" cy="90" r="75" id="hours-circle"></circle>
+                </svg>
+                <div class="flip-box" id="hours">
+                    <div class="flip-number">00</div>
+                </div>
             </div>
         </div>
-        <div class="circle-timer">
-            <svg width="180" height="180">
-                <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
-                <circle class="progress-circle" cx="90" cy="90" r="75" id="minutes-circle"></circle>
-            </svg>
-            <div class="flip-box" id="minutes">
-                <div class="flip-number">00</div>
-                <span class="label">Minutes</span>
+        <div class="countdown-item">
+            <div class="label">Minutes</div>
+            <div class="circle-timer">
+                <svg width="180" height="180">
+                    <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
+                    <circle class="progress-circle" cx="90" cy="90" r="75" id="minutes-circle"></circle>
+                </svg>
+                <div class="flip-box" id="minutes">
+                    <div class="flip-number">00</div>
+                </div>
             </div>
         </div>
-        <div class="circle-timer">
-            <svg width="180" height="180">
-                <defs>
-                    <linearGradient id="gradient-seconds" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="#ff0000"/>  
-                        <stop offset="50%" stop-color="#ff9900"/>  
-                        <stop offset="100%" stop-color="#00ff00"/>  
-                    </linearGradient>
-                </defs>
-                <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
-                <circle class="progress-circle" cx="90" cy="90" r="75" id="seconds-circle"></circle>
-            </svg>
-            <div class="flip-box" id="seconds">
-                <div class="flip-number">00</div>
-                <span class="label">Seconds</span>
+        <div class="countdown-item">
+            <div class="label">Seconds</div>
+            <div class="circle-timer">
+                <svg width="180" height="180">
+                    <defs>
+                        <linearGradient id="gradient-seconds" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#ff0000"/>  
+                            <stop offset="50%" stop-color="#ff9900"/>  
+                            <stop offset="100%" stop-color="#00ff00"/>  
+                        </linearGradient>
+                    </defs>
+                    <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
+                    <circle class="progress-circle" cx="90" cy="90" r="75" id="seconds-circle"></circle>
+                </svg>
+                <div class="flip-box" id="seconds">
+                    <div class="flip-number">00</div>
+                </div>
             </div>
         </div>
     </div>
