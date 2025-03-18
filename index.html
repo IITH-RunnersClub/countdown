@@ -21,15 +21,19 @@
             text-align: center;
         }
 
-        h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
+        /* Fix: Keep Heading Always on Top */
+        .countdown-heading {
+            font-size: 22px;
+            font-weight: bold;
             color: #fff;
+            margin-bottom: 15px;
+            text-align: center;
+            width: 100%;
         }
 
         .countdown-container {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
@@ -46,18 +50,18 @@
         }
 
         .label {
-            font-size: 20px;
+            font-size: 18px;
             color: #fff;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-align: center;
             width: 100%;
         }
 
         .circle-timer {
             position: relative;
-            width: 180px;
-            height: 180px;
+            width: 160px;
+            height: 160px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -66,12 +70,12 @@
         svg {
             width: 100%;
             height: auto;
-            max-width: 180px;
+            max-width: 160px;
         }
 
         circle {
             fill: none;
-            stroke-width: 14;
+            stroke-width: 12;
             stroke-linecap: round;
             stroke-dasharray: 471;
             stroke-dashoffset: 471;
@@ -82,9 +86,8 @@
             stroke: #ddd;
         }
 
-        /* Progress Circle Colors */
         .progress-circle {
-            stroke-width: 14;
+            stroke-width: 12;
             fill: none;
             stroke-linecap: round;
             stroke-dasharray: 471;
@@ -98,7 +101,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 50px;
+            font-size: 40px;
             font-weight: bold;
             color: #333;
             text-align: center;
@@ -106,77 +109,75 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 100px;
-            height: 80px;
+            width: 90px;
+            height: 70px;
         }
 
         .flip-number {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100px;
-            height: 80px;
-            font-size: 55px;
+            width: 90px;
+            height: 70px;
+            font-size: 40px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             padding: 5px;
         }
 
-        /* Responsive Design for Mobile */
+        /* Mobile-Friendly Layout */
         @media screen and (max-width: 768px) {
+            .countdown-heading {
+                font-size: 18px; /* Smaller text */
+                margin-bottom: 10px;
+            }
+
             .countdown-container {
-                flex-direction: column;
-                gap: 20px;
-                align-items: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
             }
 
             .circle-timer {
-                width: 140px;
-                height: 140px;
+                width: 120px;
+                height: 120px;
             }
 
             .flip-box {
-                width: 80px;
-                height: 60px;
-                font-size: 35px;
+                width: 70px;
+                height: 50px;
+                font-size: 30px;
             }
 
             .flip-number {
-                width: 80px;
-                height: 60px;
-                line-height: 60px;
-                font-size: 35px;
+                width: 70px;
+                height: 50px;
+                font-size: 30px;
             }
 
             .label {
-                font-size: 18px;
-            }
-
-            h2 {
-                font-size: 20px;
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
 
-    <h2>Train Hard, Run Fast – IITH Half Marathon Countdown</h2>
+    <!-- Fix: Heading Now Stays on Top -->
+    <div class="countdown-heading">Train Hard, Run Fast – IITH Half Marathon Countdown</div>
+
     <div class="countdown-container">
+        <!-- Days -->
         <div class="countdown-item">
             <div class="label">Days</div>
             <div class="circle-timer">
-                <svg width="180" height="180">
-                    <defs>
-                        <linearGradient id="gradient-days" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#ff0000"/>
-                            <stop offset="100%" stop-color="#00ff00"/>
-                        </linearGradient>
-                    </defs>
-                    <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
-                    <circle class="progress-circle" cx="90" cy="90" r="75" id="days-circle" stroke="url(#gradient-days)"></circle>
+                <svg width="160" height="160">
+                    <circle class="bg-circle" cx="80" cy="80" r="65"></circle>
+                    <circle class="progress-circle" cx="80" cy="80" r="65" id="days-circle" stroke="red"></circle>
                 </svg>
                 <div class="flip-box" id="days">
                     <div class="flip-number">00</div>
@@ -184,18 +185,13 @@
             </div>
         </div>
 
+        <!-- Hours -->
         <div class="countdown-item">
             <div class="label">Hours</div>
             <div class="circle-timer">
-                <svg width="180" height="180">
-                    <defs>
-                        <linearGradient id="gradient-hours" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#0000ff"/>
-                            <stop offset="100%" stop-color="#00ffff"/>
-                        </linearGradient>
-                    </defs>
-                    <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
-                    <circle class="progress-circle" cx="90" cy="90" r="75" id="hours-circle" stroke="url(#gradient-hours)"></circle>
+                <svg width="160" height="160">
+                    <circle class="bg-circle" cx="80" cy="80" r="65"></circle>
+                    <circle class="progress-circle" cx="80" cy="80" r="65" id="hours-circle" stroke="blue"></circle>
                 </svg>
                 <div class="flip-box" id="hours">
                     <div class="flip-number">00</div>
@@ -203,12 +199,13 @@
             </div>
         </div>
 
+        <!-- Minutes -->
         <div class="countdown-item">
             <div class="label">Minutes</div>
             <div class="circle-timer">
-                <svg width="180" height="180">
-                    <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
-                    <circle class="progress-circle" cx="90" cy="90" r="75" id="minutes-circle" stroke="green"></circle>
+                <svg width="160" height="160">
+                    <circle class="bg-circle" cx="80" cy="80" r="65"></circle>
+                    <circle class="progress-circle" cx="80" cy="80" r="65" id="minutes-circle" stroke="green"></circle>
                 </svg>
                 <div class="flip-box" id="minutes">
                     <div class="flip-number">00</div>
@@ -216,12 +213,13 @@
             </div>
         </div>
 
+        <!-- Seconds -->
         <div class="countdown-item">
             <div class="label">Seconds</div>
             <div class="circle-timer">
-                <svg width="180" height="180">
-                    <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
-                    <circle class="progress-circle" cx="90" cy="90" r="75" id="seconds-circle" stroke="orange"></circle>
+                <svg width="160" height="160">
+                    <circle class="bg-circle" cx="80" cy="80" r="65"></circle>
+                    <circle class="progress-circle" cx="80" cy="80" r="65" id="seconds-circle" stroke="orange"></circle>
                 </svg>
                 <div class="flip-box" id="seconds">
                     <div class="flip-number">00</div>
