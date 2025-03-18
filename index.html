@@ -33,7 +33,6 @@
 
         .countdown-container {
             display: flex;
-            gap: 30px;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
@@ -47,10 +46,16 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            margin-bottom: 20px; /* Space between vertical items */
         }
 
         /* Hide all except "Days" on mobile */
         @media screen and (max-width: 768px) {
+            .countdown-container {
+                flex-direction: column; /* Change to vertical mode */
+                gap: 20px;
+            }
+
             .countdown-item:not(:first-child) {
                 display: none; /* Hide Hours, Minutes, and Seconds */
             }
