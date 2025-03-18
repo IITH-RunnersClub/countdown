@@ -26,7 +26,7 @@
             font-size: 22px;
             font-weight: bold;
             color: #fff;
-            margin-bottom: 40px; /* Increased space between heading & countdown */
+            margin-bottom: 40px;
             text-align: center;
             width: 100%;
         }
@@ -47,6 +47,13 @@
             align-items: center;
             justify-content: center;
             position: relative;
+        }
+
+        /* Hide all except "Days" on mobile */
+        @media screen and (max-width: 768px) {
+            .countdown-item:not(:first-child) {
+                display: none; /* Hide Hours, Minutes, and Seconds */
+            }
         }
 
         .label {
@@ -126,42 +133,6 @@
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             padding: 5px;
-        }
-
-        /* Mobile-Friendly Layout */
-        @media screen and (max-width: 768px) {
-            .countdown-heading {
-                font-size: 18px; /* Smaller text */
-                margin-bottom: 20px; /* Adjusted for mobile */
-            }
-
-            .countdown-container {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-
-            .circle-timer {
-                width: 120px;
-                height: 120px;
-            }
-
-            .flip-box {
-                width: 70px;
-                height: 50px;
-                font-size: 30px;
-            }
-
-            .flip-number {
-                width: 70px;
-                height: 50px;
-                font-size: 30px;
-            }
-
-            .label {
-                font-size: 16px;
-            }
         }
     </style>
 </head>
