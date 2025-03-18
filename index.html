@@ -3,31 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Train Hard, Run Fast – IITH Half Marathon Countdown</title>
+    <title>IITH Half Marathon Countdown</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
+            min-height: 100vh;
+            background-color: transparent; /* Fully transparent background */
             flex-direction: column;
             font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #000; /* Ensuring text is visible on any background */
         }
 
         .countdown-container {
             display: flex;
             gap: 40px;
+            flex-wrap: wrap; /* Makes it responsive */
+            justify-content: center;
         }
 
         .circle-timer {
             position: relative;
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
         }
 
         svg {
-            transform: rotate(-90deg);
+            width: 100%;
+            height: auto;
+            max-width: 180px;
         }
 
         circle {
@@ -46,57 +57,85 @@
         .progress-circle {
             stroke: url(#gradient-seconds);
         }
-        
+
         .flip-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 55px; /* Adjusted font size */
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 120px; /* Reduced width */
-    height: 100px; /* Reduced height */
-}
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 110px;
+            height: 90px;
+        }
 
-.flip-number {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 120px; /* Adjusted width */
-    height: 100px; /* Adjusted height */
-    line-height: 100px; /* Ensures proper centering */
-    font-size: 65px; /* Balanced font size */
-    text-align: center;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    padding: 5px; /* Added padding to prevent text from touching edges */
-}
-
+        .flip-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 110px;
+            height: 90px;
+            font-size: 55px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6); /* Semi-transparent for visibility */
+            border-radius: 15px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 5px;
+        }
 
         .flip-box .label {
-            font-size: 20px;
+            font-size: 18px;
             color: #555;
-            margin-top: 10px;
+            margin-top: 5px;
+        }
+
+        /* Responsive Design for Mobile */
+        @media screen and (max-width: 768px) {
+            .countdown-container {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .circle-timer {
+                width: 150px;
+                height: 150px;
+            }
+
+            .flip-box {
+                width: 90px;
+                height: 70px;
+                font-size: 40px;
+            }
+
+            .flip-number {
+                width: 90px;
+                height: 70px;
+                line-height: 70px;
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h2>Train Hard, Run Fast – IITH Half Marathon Countdown</h2>
+    <h2>Countdown to the IITH Half Marathon!</h2>
     <div class="countdown-container">
         <div class="circle-timer">
-            <svg width="200" height="200">
-                <circle class="bg-circle" cx="100" cy="100" r="80"></circle>
-                <circle class="progress-circle" cx="100" cy="100" r="80" id="days-circle"></circle>
+            <svg width="180" height="180">
+                <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
+                <circle class="progress-circle" cx="90" cy="90" r="75" id="days-circle"></circle>
             </svg>
             <div class="flip-box" id="days">
                 <div class="flip-number">00</div>
@@ -104,9 +143,9 @@
             </div>
         </div>
         <div class="circle-timer">
-            <svg width="200" height="200">
-                <circle class="bg-circle" cx="100" cy="100" r="80"></circle>
-                <circle class="progress-circle" cx="100" cy="100" r="80" id="hours-circle"></circle>
+            <svg width="180" height="180">
+                <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
+                <circle class="progress-circle" cx="90" cy="90" r="75" id="hours-circle"></circle>
             </svg>
             <div class="flip-box" id="hours">
                 <div class="flip-number">00</div>
@@ -114,9 +153,9 @@
             </div>
         </div>
         <div class="circle-timer">
-            <svg width="200" height="200">
-                <circle class="bg-circle" cx="100" cy="100" r="80"></circle>
-                <circle class="progress-circle" cx="100" cy="100" r="80" id="minutes-circle"></circle>
+            <svg width="180" height="180">
+                <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
+                <circle class="progress-circle" cx="90" cy="90" r="75" id="minutes-circle"></circle>
             </svg>
             <div class="flip-box" id="minutes">
                 <div class="flip-number">00</div>
@@ -124,7 +163,7 @@
             </div>
         </div>
         <div class="circle-timer">
-            <svg width="200" height="200">
+            <svg width="180" height="180">
                 <defs>
                     <linearGradient id="gradient-seconds" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stop-color="#ff0000"/>  
@@ -132,8 +171,8 @@
                         <stop offset="100%" stop-color="#00ff00"/>  
                     </linearGradient>
                 </defs>
-                <circle class="bg-circle" cx="100" cy="100" r="80"></circle>
-                <circle class="progress-circle" cx="100" cy="100" r="80" id="seconds-circle"></circle>
+                <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
+                <circle class="progress-circle" cx="90" cy="90" r="75" id="seconds-circle"></circle>
             </svg>
             <div class="flip-box" id="seconds">
                 <div class="flip-number">00</div>
@@ -143,8 +182,7 @@
     </div>
 
     <script>
-        // 🔥 FIXED: Correct Calculation of Days
-        const eventDate = new Date(Date.UTC(2025, 10, 30, 0, 0, 0)).getTime(); // ✅ November is 10
+        const eventDate = new Date("2025-11-30T00:00:00").getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -156,26 +194,20 @@
             }
 
             const timeUnits = [
-                Math.floor(timeLeft / (1000 * 60 * 60 * 24)),  
-                Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),  
-                Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)),  
-                Math.floor((timeLeft % (1000 * 60)) / 1000)  
+                Math.floor(timeLeft / (1000 * 60 * 60 * 24)),
+                Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+                Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)),
+                Math.floor((timeLeft % (1000 * 60)) / 1000)
             ];
-
-            const maxValues = [365, 24, 60, 60]; 
 
             document.querySelectorAll(".flip-box .flip-number").forEach((container, index) => {
                 let newValue = timeUnits[index].toString().padStart(2, '0');
-                if (container.textContent !== newValue) {
-                    container.textContent = newValue;
-                }
+                container.textContent = newValue;
             });
 
-            // Update SVG Circles dynamically
             document.querySelectorAll(".progress-circle").forEach((circle, index) => {
-                let max = maxValues[index];
-                let value = timeUnits[index];
-                let offset = 471 - (471 * value / max);
+                const maxValues = [365, 24, 60, 60];
+                let offset = 471 - (471 * timeUnits[index] / maxValues[index]);
                 circle.style.strokeDashoffset = offset;
             });
         }
