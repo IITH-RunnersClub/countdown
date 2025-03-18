@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Train Hard, Run Fast – IITH Half Marathon Countdown</title>
+    <title>IITH Half Marathon Countdown</title>
     <style>
-        body {
+        /* Ensure Full-Screen Display Without Scrollbars */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevents scrolling */
+            background-color: transparent;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background-color: transparent; /* Fully transparent background */
-            flex-direction: column;
             font-family: Arial, sans-serif;
             text-align: center;
         }
@@ -19,7 +23,7 @@
         h2 {
             font-size: 24px;
             margin-bottom: 20px;
-            color: #FFFFFF; /* Ensuring text is visible on any background */
+            color: #fff; /* Ensure contrast on any background */
         }
 
         .countdown-container {
@@ -27,6 +31,8 @@
             gap: 40px;
             flex-wrap: wrap; /* Makes it responsive */
             justify-content: center;
+            max-width: 100vw;
+            overflow: hidden; /* Prevents Google Sites extra scroll */
         }
 
         .circle-timer {
@@ -83,7 +89,7 @@
             height: 90px;
             font-size: 55px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.6); /* Semi-transparent for visibility */
+            background: rgba(255, 255, 255, 0.6);
             border-radius: 15px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
             overflow: hidden;
@@ -92,7 +98,7 @@
 
         .flip-box .label {
             font-size: 18px;
-            color: #555;
+            color: #fff; /* Ensures readability */
             margin-top: 5px;
         }
 
@@ -102,11 +108,12 @@
                 flex-direction: column;
                 gap: 20px;
                 align-items: center;
+                max-height: 90vh; /* Ensures no overflow */
             }
 
             .circle-timer {
-                width: 150px;
-                height: 150px;
+                width: 140px;
+                height: 140px;
             }
 
             .flip-box {
