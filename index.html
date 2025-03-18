@@ -11,9 +11,10 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden; /* Prevents scrolling */
+            overflow: hidden;
             background-color: transparent;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             font-family: Arial, sans-serif;
@@ -23,7 +24,7 @@
         h2 {
             font-size: 24px;
             margin-bottom: 20px;
-            color: #fff; /* Ensures contrast */
+            color: #fff;
         }
 
         .countdown-container {
@@ -46,11 +47,11 @@
 
         .label {
             font-size: 20px;
-            color: #fff; /* Ensures visibility */
+            color: #fff;
             font-weight: bold;
-            margin-bottom: 10px; /* Space between label and circle */
+            margin-bottom: 10px;
             text-align: center;
-            width: 100%; /* Centers text */
+            width: 100%;
         }
 
         .circle-timer {
@@ -81,8 +82,14 @@
             stroke: #ddd;
         }
 
+        /* Progress Circle Colors */
         .progress-circle {
-            stroke: url(#gradient-seconds);
+            stroke-width: 14;
+            fill: none;
+            stroke-linecap: round;
+            stroke-dasharray: 471;
+            stroke-dashoffset: 471;
+            transition: stroke-dashoffset 1s linear;
         }
 
         /* Fix: Keep Numbers Inside Circles */
@@ -111,7 +118,7 @@
             height: 80px;
             font-size: 55px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.7); /* Semi-transparent for readability */
+            background: rgba(255, 255, 255, 0.7);
             border-radius: 15px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
             overflow: hidden;
@@ -162,51 +169,59 @@
             <div class="label">Days</div>
             <div class="circle-timer">
                 <svg width="180" height="180">
+                    <defs>
+                        <linearGradient id="gradient-days" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#ff0000"/>
+                            <stop offset="100%" stop-color="#00ff00"/>
+                        </linearGradient>
+                    </defs>
                     <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
-                    <circle class="progress-circle" cx="90" cy="90" r="75" id="days-circle"></circle>
+                    <circle class="progress-circle" cx="90" cy="90" r="75" id="days-circle" stroke="url(#gradient-days)"></circle>
                 </svg>
                 <div class="flip-box" id="days">
                     <div class="flip-number">00</div>
                 </div>
             </div>
         </div>
+
         <div class="countdown-item">
             <div class="label">Hours</div>
             <div class="circle-timer">
                 <svg width="180" height="180">
+                    <defs>
+                        <linearGradient id="gradient-hours" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#0000ff"/>
+                            <stop offset="100%" stop-color="#00ffff"/>
+                        </linearGradient>
+                    </defs>
                     <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
-                    <circle class="progress-circle" cx="90" cy="90" r="75" id="hours-circle"></circle>
+                    <circle class="progress-circle" cx="90" cy="90" r="75" id="hours-circle" stroke="url(#gradient-hours)"></circle>
                 </svg>
                 <div class="flip-box" id="hours">
                     <div class="flip-number">00</div>
                 </div>
             </div>
         </div>
+
         <div class="countdown-item">
             <div class="label">Minutes</div>
             <div class="circle-timer">
                 <svg width="180" height="180">
                     <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
-                    <circle class="progress-circle" cx="90" cy="90" r="75" id="minutes-circle"></circle>
+                    <circle class="progress-circle" cx="90" cy="90" r="75" id="minutes-circle" stroke="green"></circle>
                 </svg>
                 <div class="flip-box" id="minutes">
                     <div class="flip-number">00</div>
                 </div>
             </div>
         </div>
+
         <div class="countdown-item">
             <div class="label">Seconds</div>
             <div class="circle-timer">
                 <svg width="180" height="180">
-                    <defs>
-                        <linearGradient id="gradient-seconds" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#ff0000"/>  
-                            <stop offset="50%" stop-color="#ff9900"/>  
-                            <stop offset="100%" stop-color="#00ff00"/>  
-                        </linearGradient>
-                    </defs>
                     <circle class="bg-circle" cx="90" cy="90" r="75"></circle>
-                    <circle class="progress-circle" cx="90" cy="90" r="75" id="seconds-circle"></circle>
+                    <circle class="progress-circle" cx="90" cy="90" r="75" id="seconds-circle" stroke="orange"></circle>
                 </svg>
                 <div class="flip-box" id="seconds">
                     <div class="flip-number">00</div>
@@ -216,37 +231,23 @@
     </div>
 
     <script>
-        const eventDate = new Date("2025-11-30T00:00:00").getTime();
-
         function updateCountdown() {
+            const eventDate = new Date("2025-11-30T00:00:00").getTime();
             const now = new Date().getTime();
             const timeLeft = eventDate - now;
+            const timeUnits = [Math.floor(timeLeft / 86400000), Math.floor((timeLeft % 86400000) / 3600000), Math.floor((timeLeft % 3600000) / 60000), Math.floor((timeLeft % 60000) / 1000)];
 
-            if (timeLeft < 0) {
-                clearInterval(countdownInterval);
-                return;
-            }
-
-            const timeUnits = [
-                Math.floor(timeLeft / (1000 * 60 * 60 * 24)),
-                Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-                Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)),
-                Math.floor((timeLeft % (1000 * 60)) / 1000)
-            ];
-
-            document.querySelectorAll(".flip-box .flip-number").forEach((container, index) => {
-                let newValue = timeUnits[index].toString().padStart(2, '0');
-                container.textContent = newValue;
+            document.querySelectorAll(".flip-number").forEach((container, index) => {
+                container.textContent = timeUnits[index].toString().padStart(2, '0');
             });
 
             document.querySelectorAll(".progress-circle").forEach((circle, index) => {
                 const maxValues = [365, 24, 60, 60];
-                let offset = 471 - (471 * timeUnits[index] / maxValues[index]);
-                circle.style.strokeDashoffset = offset;
+                circle.style.strokeDashoffset = 471 - (471 * timeUnits[index] / maxValues[index]);
             });
         }
 
-        const countdownInterval = setInterval(updateCountdown, 1000);
+        setInterval(updateCountdown, 1000);
         updateCountdown();
     </script>
 
