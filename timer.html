@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Hard, Run Fast – IITH Half Marathon Countdown</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+
+        .countdown-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .circle-timer {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        svg {
+            transform: rotate(-90deg);
+        }
+
+        circle {
+            fill: none;
+            stroke-width: 14;
+            stroke-linecap: round;
+            stroke-dasharray: 471;
+            stroke-dashoffset: 471;
+            transition: stroke-dashoffset 1s linear;
+        }
+
+        .bg-circle {
+            stroke: #ddd;
+        }
+
+        .progress-circle {
+            stroke: url(#gradient-seconds);
+        }
+        
+        .flip-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 55px; /* Adjusted font size */
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px; /* Reduced width */
+    height: 100px; /* Reduced height */
+}
+
+.flip-number {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px; /* Adjusted width */
+    height: 100px; /* Adjusted height */
+    line-height: 100px; /* Ensures proper centering */
+    font-size: 65px; /* Balanced font size */
+    text-align: center;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 5px; /* Added padding to prevent text from touching edges */
+}
+
+
+        .flip-box .label {
+            font-size: 20px;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Train Hard, Run Fast – IITH Half Marathon Countdown</h2>
+    <div class="countdown-container">
+        <div class="circle-timer">
+            <svg width="200" height="200">
+                <circle class="bg-circle" cx="100" cy="100" r="80"></circle>
+                <circle class="progress-circle" cx="100" cy="100" r="80" id="days-circle"></circle>
+            </svg>
+            <div class="flip-box" id="days">
+                <div class="flip-number">00</div>
+                <span class="label">Days</span>
+            </div>
+        </div>
+        <div class="circle-timer">
+            <svg width="200" height="200">
+                <circle class="bg-circle" cx="100" cy="100" r="80"></circle>
+                <circle class="progress-circle" cx="100" cy="100" r="80" id="hours-circle"></circle>
+            </svg>
+            <div class="flip-box" id="hours">
+                <div class="flip-number">00</div>
+                <span class="label">Hours</span>
+            </div>
+        </div>
+        <div class="circle-timer">
+            <svg width="200" height="200">
+                <circle class="bg-circle" cx="100" cy="100" r="80"></circle>
+                <circle class="progress-circle" cx="100" cy="100" r="80" id="minutes-circle"></circle>
+            </svg>
+            <div class="flip-box" id="minutes">
+                <div class="flip-number">00</div>
+                <span class="label">Minutes</span>
+            </div>
+        </div>
+        <div class="circle-timer">
+            <svg width="200" height="200">
+                <defs>
+                    <linearGradient id="gradient-seconds" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#ff0000"/>  
+                        <stop offset="50%" stop-color="#ff9900"/>  
+                        <stop offset="100%" stop-color="#00ff00"/>  
+                    </linearGradient>
+                </defs>
+                <circle class="bg-circle" cx="100" cy="100" r="80"></circle>
+                <circle class="progress-circle" cx="100" cy="100" r="80" id="seconds-circle"></circle>
+            </svg>
+            <div class="flip-box" id="seconds">
+                <div class="flip-number">00</div>
+                <span class="label">Seconds</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 🔥 FIXED: Correct Calculation of Days
+        const eventDate = new Date(Date.UTC(2025, 10, 30, 0, 0, 0)).getTime(); // ✅ November is 10
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            if (timeLeft < 0) {
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const timeUnits = [
+                Math.floor(timeLeft / (1000 * 60 * 60 * 24)),  
+                Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),  
+                Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)),  
+                Math.floor((timeLeft % (1000 * 60)) / 1000)  
+            ];
+
+            const maxValues = [365, 24, 60, 60]; 
+
+            document.querySelectorAll(".flip-box .flip-number").forEach((container, index) => {
+                let newValue = timeUnits[index].toString().padStart(2, '0');
+                if (container.textContent !== newValue) {
+                    container.textContent = newValue;
+                }
+            });
+
+            // Update SVG Circles dynamically
+            document.querySelectorAll(".progress-circle").forEach((circle, index) => {
+                let max = maxValues[index];
+                let value = timeUnits[index];
+                let offset = 471 - (471 * value / max);
+                circle.style.strokeDashoffset = offset;
+            });
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+</body>
+</html>
