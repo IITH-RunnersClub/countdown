@@ -77,9 +77,9 @@
 
         circle {
             fill: none;
-            stroke-width: 8;
+            stroke-width: 8; /* Reduced stroke width */
             stroke-linecap: round;
-            stroke-dasharray: 450;
+            stroke-dasharray: 450; /* Adjusted for smooth animation */
             stroke-dashoffset: 450;
             transition: stroke-dashoffset 1s linear;
         }
@@ -131,7 +131,7 @@
             padding: 3px;
         }
 
-        /* Mobile Optimization: Only Show Days & Hours */
+        /* Mobile Optimization */
         @media screen and (max-width: 768px) {
             .countdown-heading {
                 font-size: 18px;
@@ -163,12 +163,6 @@
             .label {
                 font-size: 14px;
             }
-
-            /* Hide Minutes & Seconds on Mobile */
-            .countdown-item:nth-child(3),
-            .countdown-item:nth-child(4) {
-                display: none;
-            }
         }
     </style>
 </head>
@@ -182,6 +176,12 @@
             <div class="label">Days</div>
             <div class="circle-timer">
                 <svg viewBox="0 0 170 170">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="red"/>
+                            <stop offset="100%" stop-color="orange"/>
+                        </linearGradient>
+                    </defs>
                     <circle class="bg-circle" cx="85" cy="85" r="75"></circle>
                     <circle class="progress-circle" cx="85" cy="85" r="75" id="days-circle"></circle>
                 </svg>
@@ -204,34 +204,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Minutes -->
-        <div class="countdown-item">
-            <div class="label">Minutes</div>
-            <div class="circle-timer">
-                <svg viewBox="0 0 170 170">
-                    <circle class="bg-circle" cx="85" cy="85" r="75"></circle>
-                    <circle class="progress-circle" cx="85" cy="85" r="75" id="minutes-circle"></circle>
-                </svg>
-                <div class="flip-box" id="minutes">
-                    <div class="flip-number">00</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Seconds -->
-        <div class="countdown-item">
-            <div class="label">Seconds</div>
-            <div class="circle-timer">
-                <svg viewBox="0 0 170 170">
-                    <circle class="bg-circle" cx="85" cy="85" r="75"></circle>
-                    <circle class="progress-circle" cx="85" cy="85" r="75" id="seconds-circle"></circle>
-                </svg>
-                <div class="flip-box" id="seconds">
-                    <div class="flip-number">00</div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script>
@@ -239,19 +211,14 @@
             const eventDate = new Date("2025-11-30T00:00:00").getTime();
             const now = new Date().getTime();
             const timeLeft = eventDate - now;
-            const timeUnits = [
-                Math.floor(timeLeft / 86400000),
-                Math.floor((timeLeft % 86400000) / 3600000),
-                Math.floor((timeLeft % 3600000) / 60000),
-                Math.floor((timeLeft % 60000) / 1000)
-            ];
+            const timeUnits = [Math.floor(timeLeft / 86400000), Math.floor((timeLeft % 86400000) / 3600000)];
 
             document.querySelectorAll(".flip-number").forEach((container, index) => {
                 container.textContent = timeUnits[index].toString().padStart(2, '0');
             });
 
             document.querySelectorAll(".progress-circle").forEach((circle, index) => {
-                const maxValues = [365, 24, 60, 60];
+                const maxValues = [365, 24];
                 circle.style.strokeDashoffset = 450 - (450 * timeUnits[index] / maxValues[index]);
             });
         }
