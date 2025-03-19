@@ -25,7 +25,7 @@
         .countdown-heading {
             font-size: 20px;
             font-weight: bold;
-            color: #000; /* Changed to black */
+            color: #000;
             margin-bottom: 20px;
             text-align: center;
             width: 100%;
@@ -50,9 +50,21 @@
             margin-bottom: 10px;
         }
 
+        /* Show only "Days" and "Hours" on mobile */
+        @media screen and (max-width: 768px) {
+            .countdown-container {
+                flex-direction: column; /* Vertical layout for mobile */
+                gap: 20px;
+            }
+
+            .countdown-item:not(:first-child):not(:nth-child(2)) {
+                display: none; /* Hide Minutes and Seconds */
+            }
+        }
+
         .label {
             font-size: 16px;
-            color: #000; /* Changed to black */
+            color: #000;
             font-weight: bold;
             margin-bottom: 5px;
             text-align: center;
@@ -104,7 +116,7 @@
             transform: translate(-50%, -50%);
             font-size: 32px;
             font-weight: bold;
-            color: #000; /* Changed to black */
+            color: #000;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -134,11 +146,6 @@
             .countdown-heading {
                 font-size: 18px;
                 margin-bottom: 15px;
-            }
-
-            .countdown-container {
-                flex-direction: row;
-                gap: 10px;
             }
 
             .circle-timer {
