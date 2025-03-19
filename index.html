@@ -61,8 +61,8 @@
 
         .circle-timer {
             position: relative;
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -70,16 +70,17 @@
 
         svg {
             width: 100%;
-            height: auto;
-            max-width: 140px;
+            height: 100%;
+            max-width: 150px;
+            max-height: 150px;
         }
 
         circle {
             fill: none;
-            stroke-width: 10;
+            stroke-width: 8; /* Reduced stroke width to prevent clipping */
             stroke-linecap: round;
-            stroke-dasharray: 471;
-            stroke-dashoffset: 471;
+            stroke-dasharray: 440; /* Adjusted for smooth animation */
+            stroke-dashoffset: 440;
             transition: stroke-dashoffset 1s linear;
         }
 
@@ -88,11 +89,11 @@
         }
 
         .progress-circle {
-            stroke-width: 10;
+            stroke-width: 8;
             fill: none;
             stroke-linecap: round;
-            stroke-dasharray: 471;
-            stroke-dashoffset: 471;
+            stroke-dasharray: 440;
+            stroke-dashoffset: 440;
             transition: stroke-dashoffset 1s linear;
             stroke: url(#gradient);
         }
@@ -103,7 +104,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 32px;
+            font-size: 30px;
             font-weight: bold;
             color: #000;
             text-align: center;
@@ -121,7 +122,7 @@
             justify-content: center;
             width: 70px;
             height: 50px;
-            font-size: 32px;
+            font-size: 30px;
             text-align: center;
             background: rgba(255, 255, 255, 0.8);
             border-radius: 8px;
@@ -174,15 +175,15 @@
         <div class="countdown-item">
             <div class="label">Days</div>
             <div class="circle-timer">
-                <svg width="140" height="140">
+                <svg viewBox="0 0 150 150">
                     <defs>
                         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stop-color="red"/>
                             <stop offset="100%" stop-color="orange"/>
                         </linearGradient>
                     </defs>
-                    <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
-                    <circle class="progress-circle" cx="70" cy="70" r="60" id="days-circle"></circle>
+                    <circle class="bg-circle" cx="75" cy="75" r="65"></circle>
+                    <circle class="progress-circle" cx="75" cy="75" r="65" id="days-circle"></circle>
                 </svg>
                 <div class="flip-box" id="days">
                     <div class="flip-number">00</div>
@@ -194,9 +195,9 @@
         <div class="countdown-item">
             <div class="label">Hours</div>
             <div class="circle-timer">
-                <svg width="140" height="140">
-                    <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
-                    <circle class="progress-circle" cx="70" cy="70" r="60" id="hours-circle"></circle>
+                <svg viewBox="0 0 150 150">
+                    <circle class="bg-circle" cx="75" cy="75" r="65"></circle>
+                    <circle class="progress-circle" cx="75" cy="75" r="65" id="hours-circle"></circle>
                 </svg>
                 <div class="flip-box" id="hours">
                     <div class="flip-number">00</div>
@@ -218,7 +219,7 @@
 
             document.querySelectorAll(".progress-circle").forEach((circle, index) => {
                 const maxValues = [365, 24];
-                circle.style.strokeDashoffset = 471 - (471 * timeUnits[index] / maxValues[index]);
+                circle.style.strokeDashoffset = 440 - (440 * timeUnits[index] / maxValues[index]);
             });
         }
 
