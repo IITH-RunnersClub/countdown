@@ -21,18 +21,19 @@
             text-align: center;
         }
 
-        /* Fix: Keep Heading Always on Top with Extra Space */
+        /* Fix: Keep Heading Always on Top with Less Space */
         .countdown-heading {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
-            color: #000000;
-            margin-bottom: 40px;
+            color: #000; /* Changed to black */
+            margin-bottom: 20px;
             text-align: center;
             width: 100%;
         }
 
         .countdown-container {
             display: flex;
+            gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
@@ -46,34 +47,22 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            margin-bottom: 20px; /* Space between vertical items */
-        }
-
-        /* Show only "Days" and "Seconds" on mobile */
-        @media screen and (max-width: 768px) {
-            .countdown-container {
-                flex-direction: column; /* Change to vertical mode */
-                gap: 20px;
-            }
-
-            .countdown-item:not(:first-child):not(:last-child) {
-                display: none; /* Hide Hours and Minutes */
-            }
+            margin-bottom: 10px;
         }
 
         .label {
-            font-size: 18px;
-            color: #fff;
+            font-size: 16px;
+            color: #000; /* Changed to black */
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             text-align: center;
             width: 100%;
         }
 
         .circle-timer {
             position: relative;
-            width: 160px;
-            height: 160px;
+            width: 140px;
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -82,12 +71,12 @@
         svg {
             width: 100%;
             height: auto;
-            max-width: 160px;
+            max-width: 140px;
         }
 
         circle {
             fill: none;
-            stroke-width: 12;
+            stroke-width: 10;
             stroke-linecap: round;
             stroke-dasharray: 471;
             stroke-dashoffset: 471;
@@ -99,7 +88,7 @@
         }
 
         .progress-circle {
-            stroke-width: 12;
+            stroke-width: 10;
             fill: none;
             stroke-linecap: round;
             stroke-dasharray: 471;
@@ -113,37 +102,71 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 40px;
+            font-size: 32px;
             font-weight: bold;
-            color: #333;
+            color: #000; /* Changed to black */
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 90px;
-            height: 70px;
+            width: 70px;
+            height: 50px;
         }
 
         .flip-number {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 90px;
-            height: 70px;
-            font-size: 40px;
+            width: 70px;
+            height: 50px;
+            font-size: 32px;
             text-align: center;
             background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             overflow: hidden;
-            padding: 5px;
+            padding: 3px;
+        }
+
+        /* Mobile Optimization */
+        @media screen and (max-width: 768px) {
+            .countdown-heading {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+            .countdown-container {
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .circle-timer {
+                width: 100px;
+                height: 100px;
+            }
+
+            .flip-box {
+                width: 50px;
+                height: 40px;
+                font-size: 24px;
+            }
+
+            .flip-number {
+                width: 50px;
+                height: 40px;
+                font-size: 24px;
+            }
+
+            .label {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Fix: Heading Now Stays on Top with More Space -->
+    <!-- Fix: Heading Now Stays on Top with Less Space -->
     <div class="countdown-heading">Train Hard, Run Fast – IITH Half Marathon Countdown</div>
 
     <div class="countdown-container">
@@ -151,9 +174,9 @@
         <div class="countdown-item">
             <div class="label">Days</div>
             <div class="circle-timer">
-                <svg width="160" height="160">
-                    <circle class="bg-circle" cx="80" cy="80" r="65"></circle>
-                    <circle class="progress-circle" cx="80" cy="80" r="65" id="days-circle" stroke="red"></circle>
+                <svg width="140" height="140">
+                    <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
+                    <circle class="progress-circle" cx="70" cy="70" r="60" id="days-circle" stroke="red"></circle>
                 </svg>
                 <div class="flip-box" id="days">
                     <div class="flip-number">00</div>
@@ -165,9 +188,9 @@
         <div class="countdown-item">
             <div class="label">Hours</div>
             <div class="circle-timer">
-                <svg width="160" height="160">
-                    <circle class="bg-circle" cx="80" cy="80" r="65"></circle>
-                    <circle class="progress-circle" cx="80" cy="80" r="65" id="hours-circle" stroke="blue"></circle>
+                <svg width="140" height="140">
+                    <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
+                    <circle class="progress-circle" cx="70" cy="70" r="60" id="hours-circle" stroke="blue"></circle>
                 </svg>
                 <div class="flip-box" id="hours">
                     <div class="flip-number">00</div>
@@ -179,9 +202,9 @@
         <div class="countdown-item">
             <div class="label">Minutes</div>
             <div class="circle-timer">
-                <svg width="160" height="160">
-                    <circle class="bg-circle" cx="80" cy="80" r="65"></circle>
-                    <circle class="progress-circle" cx="80" cy="80" r="65" id="minutes-circle" stroke="green"></circle>
+                <svg width="140" height="140">
+                    <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
+                    <circle class="progress-circle" cx="70" cy="70" r="60" id="minutes-circle" stroke="green"></circle>
                 </svg>
                 <div class="flip-box" id="minutes">
                     <div class="flip-number">00</div>
@@ -193,9 +216,9 @@
         <div class="countdown-item">
             <div class="label">Seconds</div>
             <div class="circle-timer">
-                <svg width="160" height="160">
-                    <circle class="bg-circle" cx="80" cy="80" r="65"></circle>
-                    <circle class="progress-circle" cx="80" cy="80" r="65" id="seconds-circle" stroke="orange"></circle>
+                <svg width="140" height="140">
+                    <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
+                    <circle class="progress-circle" cx="70" cy="70" r="60" id="seconds-circle" stroke="orange"></circle>
                 </svg>
                 <div class="flip-box" id="seconds">
                     <div class="flip-number">00</div>
