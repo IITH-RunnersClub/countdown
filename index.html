@@ -61,8 +61,8 @@
 
         .circle-timer {
             position: relative;
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -71,16 +71,16 @@
         svg {
             width: 100%;
             height: 100%;
-            max-width: 150px;
-            max-height: 150px;
+            max-width: 160px;
+            max-height: 160px;
         }
 
         circle {
             fill: none;
-            stroke-width: 8; /* Reduced stroke width to prevent clipping */
+            stroke-width: 8; /* Reduced stroke width */
             stroke-linecap: round;
-            stroke-dasharray: 440; /* Adjusted for smooth animation */
-            stroke-dashoffset: 440;
+            stroke-dasharray: 450; /* Adjusted for smooth animation */
+            stroke-dashoffset: 450;
             transition: stroke-dashoffset 1s linear;
         }
 
@@ -92,8 +92,8 @@
             stroke-width: 8;
             fill: none;
             stroke-linecap: round;
-            stroke-dasharray: 440;
-            stroke-dashoffset: 440;
+            stroke-dasharray: 450;
+            stroke-dashoffset: 450;
             transition: stroke-dashoffset 1s linear;
             stroke: url(#gradient);
         }
@@ -144,8 +144,8 @@
             }
 
             .circle-timer {
-                width: 120px;
-                height: 120px;
+                width: 140px;
+                height: 140px;
             }
 
             .flip-box {
@@ -175,15 +175,15 @@
         <div class="countdown-item">
             <div class="label">Days</div>
             <div class="circle-timer">
-                <svg viewBox="0 0 150 150">
+                <svg viewBox="0 0 170 170">
                     <defs>
                         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stop-color="red"/>
                             <stop offset="100%" stop-color="orange"/>
                         </linearGradient>
                     </defs>
-                    <circle class="bg-circle" cx="75" cy="75" r="65"></circle>
-                    <circle class="progress-circle" cx="75" cy="75" r="65" id="days-circle"></circle>
+                    <circle class="bg-circle" cx="85" cy="85" r="75"></circle>
+                    <circle class="progress-circle" cx="85" cy="85" r="75" id="days-circle"></circle>
                 </svg>
                 <div class="flip-box" id="days">
                     <div class="flip-number">00</div>
@@ -195,9 +195,9 @@
         <div class="countdown-item">
             <div class="label">Hours</div>
             <div class="circle-timer">
-                <svg viewBox="0 0 150 150">
-                    <circle class="bg-circle" cx="75" cy="75" r="65"></circle>
-                    <circle class="progress-circle" cx="75" cy="75" r="65" id="hours-circle"></circle>
+                <svg viewBox="0 0 170 170">
+                    <circle class="bg-circle" cx="85" cy="85" r="75"></circle>
+                    <circle class="progress-circle" cx="85" cy="85" r="75" id="hours-circle"></circle>
                 </svg>
                 <div class="flip-box" id="hours">
                     <div class="flip-number">00</div>
@@ -219,7 +219,7 @@
 
             document.querySelectorAll(".progress-circle").forEach((circle, index) => {
                 const maxValues = [365, 24];
-                circle.style.strokeDashoffset = 440 - (440 * timeUnits[index] / maxValues[index]);
+                circle.style.strokeDashoffset = 450 - (450 * timeUnits[index] / maxValues[index]);
             });
         }
 
