@@ -12,7 +12,7 @@
       font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* Ensures countdown is on the left */
+      align-items: flex-start;
       justify-content: center;
       text-align: center;
       width: 100%;
@@ -40,7 +40,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 20%; /* Ensures even spacing */
+      width: 20%;
     }
 
     .label {
@@ -52,8 +52,8 @@
 
     .circle-timer {
       position: relative;
-      width: 130px;
-      height: 130px;
+      width: 160px; /* Increased size */
+      height: 160px;
     }
 
     svg {
@@ -63,10 +63,10 @@
 
     circle {
       fill: none;
-      stroke-width: 8;
+      stroke-width: 10; /* Thicker stroke */
       stroke-linecap: round;
-      stroke-dasharray: 450;
-      stroke-dashoffset: 450;
+      stroke-dasharray: 472; /* Adjusted to fit full ring */
+      stroke-dashoffset: 472;
       transition: stroke-dashoffset 1s linear;
     }
 
@@ -91,7 +91,7 @@
       border-radius: 8px;
     }
 
-    /* Hide Minutes & Seconds on Mobile */
+    /* Responsive Design for Mobile */
     @media screen and (max-width: 768px) {
       .countdown-container {
         flex-direction: column;
@@ -100,15 +100,14 @@
       }
 
       .circle-timer {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
       }
 
       .flip-box {
         font-size: 18px;
       }
 
-      /* Hide minutes & seconds */
       .countdown-item[data-type="minutes"],
       .countdown-item[data-type="seconds"] {
         display: none;
@@ -123,15 +122,15 @@
     <div class="countdown-item" data-type="days">
       <div class="label">Days</div>
       <div class="circle-timer">
-        <svg viewBox="0 0 170 170">
+        <svg viewBox="0 0 180 180"> <!-- Increased ViewBox -->
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="red"/>
               <stop offset="100%" stop-color="orange"/>
             </linearGradient>
           </defs>
-          <circle class="bg-circle" cx="85" cy="85" r="75"></circle>
-          <circle class="progress-circle" cx="85" cy="85" r="75" id="days-circle"></circle>
+          <circle class="bg-circle" cx="90" cy="90" r="80"></circle>
+          <circle class="progress-circle" cx="90" cy="90" r="80" id="days-circle"></circle>
         </svg>
         <div class="flip-box" id="days">
           <div class="flip-number">00</div>
@@ -143,9 +142,9 @@
     <div class="countdown-item" data-type="hours">
       <div class="label">Hours</div>
       <div class="circle-timer">
-        <svg viewBox="0 0 170 170">
-          <circle class="bg-circle" cx="85" cy="85" r="75"></circle>
-          <circle class="progress-circle" cx="85" cy="85" r="75" id="hours-circle"></circle>
+        <svg viewBox="0 0 180 180">
+          <circle class="bg-circle" cx="90" cy="90" r="80"></circle>
+          <circle class="progress-circle" cx="90" cy="90" r="80" id="hours-circle"></circle>
         </svg>
         <div class="flip-box" id="hours">
           <div class="flip-number">00</div>
@@ -157,9 +156,9 @@
     <div class="countdown-item" data-type="minutes">
       <div class="label">Minutes</div>
       <div class="circle-timer">
-        <svg viewBox="0 0 170 170">
-          <circle class="bg-circle" cx="85" cy="85" r="75"></circle>
-          <circle class="progress-circle" cx="85" cy="85" r="75" id="minutes-circle"></circle>
+        <svg viewBox="0 0 180 180">
+          <circle class="bg-circle" cx="90" cy="90" r="80"></circle>
+          <circle class="progress-circle" cx="90" cy="90" r="80" id="minutes-circle"></circle>
         </svg>
         <div class="flip-box" id="minutes">
           <div class="flip-number">00</div>
@@ -171,9 +170,9 @@
     <div class="countdown-item" data-type="seconds">
       <div class="label">Seconds</div>
       <div class="circle-timer">
-        <svg viewBox="0 0 170 170">
-          <circle class="bg-circle" cx="85" cy="85" r="75"></circle>
-          <circle class="progress-circle" cx="85" cy="85" r="75" id="seconds-circle"></circle>
+        <svg viewBox="0 0 180 180">
+          <circle class="bg-circle" cx="90" cy="90" r="80"></circle>
+          <circle class="progress-circle" cx="90" cy="90" r="80" id="seconds-circle"></circle>
         </svg>
         <div class="flip-box" id="seconds">
           <div class="flip-number">00</div>
