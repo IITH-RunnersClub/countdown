@@ -19,6 +19,7 @@
             text-align: center;
         }
 
+        /* 🏆 Title Always Visible */
         .countdown-heading {
             font-size: 22px;
             font-weight: bold;
@@ -26,6 +27,11 @@
             margin-bottom: 20px;
             text-align: center;
             width: 100%;
+            padding: 10px;
+            background-color: white; /* Ensure visibility */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .countdown-container {
@@ -90,7 +96,7 @@
             transition: stroke-dashoffset 1s linear;
         }
 
-        /* Perfectly Centered Countdown Numbers */
+        /* Center Numbers Inside Circles */
         .flip-box {
             position: absolute;
             top: 50%;
@@ -110,10 +116,10 @@
             text-align: center;
         }
 
-        /* Mobile Adjustments */
+        /* 📱 Mobile Adjustments */
         @media screen and (max-width: 768px) {
             .countdown-container {
-                flex-direction: column; /* Stack items vertically */
+                flex-direction: column;
                 gap: 20px;
             }
 
@@ -134,6 +140,11 @@
 
             .label {
                 font-size: 16px;
+            }
+
+            /* ❌ Hide "Minutes" and "Seconds" on Mobile */
+            .hide-on-mobile {
+                display: none !important;
             }
         }
     </style>
@@ -165,7 +176,8 @@
             </div>
         </div>
 
-        <div class="countdown-item">
+        <!-- Minutes (Hidden on Mobile) -->
+        <div class="countdown-item hide-on-mobile">
             <div class="label">Minutes</div>
             <div class="circle-timer">
                 <svg>
@@ -176,7 +188,8 @@
             </div>
         </div>
 
-        <div class="countdown-item">
+        <!-- Seconds (Hidden on Mobile) -->
+        <div class="countdown-item hide-on-mobile">
             <div class="label">Seconds</div>
             <div class="circle-timer">
                 <svg>
@@ -194,10 +207,10 @@
             const now = new Date().getTime();
             const timeLeft = eventDate - now;
             const timeUnits = [
-                Math.floor(timeLeft / 86400000),
-                Math.floor((timeLeft % 86400000) / 3600000),
-                Math.floor((timeLeft % 3600000) / 60000),
-                Math.floor((timeLeft % 60000) / 1000)
+                Math.floor(timeLeft / 86400000), // Days
+                Math.floor((timeLeft % 86400000) / 3600000), // Hours
+                Math.floor((timeLeft % 3600000) / 60000), // Minutes
+                Math.floor((timeLeft % 60000) / 1000) // Seconds
             ];
 
             document.querySelectorAll(".flip-box").forEach((container, index) => {
