@@ -17,7 +17,7 @@
             align-items: center;
             font-family: Arial, sans-serif;
             text-align: center;
-            overflow-x: hidden; /* 🔥 Prevents Horizontal Scrolling */
+            overflow-x: hidden;
         }
 
         /* 🏆 Title Always Visible */
@@ -37,12 +37,12 @@
 
         .countdown-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 30px; /* 🔥 Reduced gap */
+            flex-wrap: wrap;
+            gap: 30px;
             max-width: 100%;
-            padding: 10px; /* 🔥 Added padding to prevent overflow */
+            padding: 10px;
         }
 
         .countdown-item {
@@ -51,7 +51,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            margin-bottom: 10px;
+            width: 140px;
         }
 
         .label {
@@ -62,8 +62,8 @@
         }
 
         .circle-timer {
-            width: 110px; /* 🔥 Reduced for better fit */
-            height: 110px;
+            width: 120px;
+            height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -71,17 +71,17 @@
         }
 
         svg {
-            width: 100%;
-            height: auto;
-            max-width: 110px; /* 🔥 Adjusted for responsiveness */
+            width: 120px;
+            height: 120px;
+            position: absolute;
         }
 
         circle {
             fill: none;
             stroke-width: 8;
             stroke-linecap: round;
-            stroke-dasharray: 471;
-            stroke-dashoffset: 471;
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
             transition: stroke-dashoffset 1s linear;
         }
 
@@ -93,12 +93,12 @@
             stroke-width: 8;
             fill: none;
             stroke-linecap: round;
-            stroke-dasharray: 471;
-            stroke-dashoffset: 471;
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
             transition: stroke-dashoffset 1s linear;
         }
 
-        /* 🔥 Smaller Countdown Numbers */
+        /* Perfectly Center Countdown Numbers */
         .flip-box {
             position: absolute;
             top: 50%;
@@ -121,22 +121,23 @@
         /* 📱 Mobile Adjustments */
         @media screen and (max-width: 768px) {
             .countdown-container {
-                flex-direction: column; /* Stack vertically */
-                gap: 10px; /* 🔥 Reduced */
+                flex-direction: column;
+                gap: 15px;
             }
 
             .circle-timer {
-                width: 80px; /* 🔥 Smaller */
-                height: 80px;
+                width: 100px;
+                height: 100px;
             }
 
             svg {
-                max-width: 80px;
+                width: 100px;
+                height: 100px;
             }
 
             .flip-box {
-                width: 35px;
-                height: 30px;
+                width: 40px;
+                height: 35px;
                 font-size: 18px;
             }
 
@@ -159,9 +160,9 @@
         <div class="countdown-item">
             <div class="label">Days</div>
             <div class="circle-timer">
-                <svg>
-                    <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
-                    <circle class="progress-circle" cx="70" cy="70" r="60" id="days-circle" stroke="red"></circle>
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg-circle" cx="60" cy="60" r="45"></circle>
+                    <circle class="progress-circle" cx="60" cy="60" r="45" id="days-circle" stroke="red"></circle>
                 </svg>
                 <div class="flip-box" id="days">00</div>
             </div>
@@ -170,9 +171,9 @@
         <div class="countdown-item">
             <div class="label">Hours</div>
             <div class="circle-timer">
-                <svg>
-                    <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
-                    <circle class="progress-circle" cx="70" cy="70" r="60" id="hours-circle" stroke="blue"></circle>
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg-circle" cx="60" cy="60" r="45"></circle>
+                    <circle class="progress-circle" cx="60" cy="60" r="45" id="hours-circle" stroke="blue"></circle>
                 </svg>
                 <div class="flip-box" id="hours">00</div>
             </div>
@@ -182,9 +183,9 @@
         <div class="countdown-item hide-on-mobile">
             <div class="label">Minutes</div>
             <div class="circle-timer">
-                <svg>
-                    <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
-                    <circle class="progress-circle" cx="70" cy="70" r="60" id="minutes-circle" stroke="green"></circle>
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg-circle" cx="60" cy="60" r="45"></circle>
+                    <circle class="progress-circle" cx="60" cy="60" r="45" id="minutes-circle" stroke="green"></circle>
                 </svg>
                 <div class="flip-box" id="minutes">00</div>
             </div>
@@ -194,9 +195,9 @@
         <div class="countdown-item hide-on-mobile">
             <div class="label">Seconds</div>
             <div class="circle-timer">
-                <svg>
-                    <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
-                    <circle class="progress-circle" cx="70" cy="70" r="60" id="seconds-circle" stroke="orange"></circle>
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg-circle" cx="60" cy="60" r="45"></circle>
+                    <circle class="progress-circle" cx="60" cy="60" r="45" id="seconds-circle" stroke="orange"></circle>
                 </svg>
                 <div class="flip-box" id="seconds">00</div>
             </div>
@@ -221,7 +222,7 @@
 
             document.querySelectorAll(".progress-circle").forEach((circle, index) => {
                 const maxValues = [365, 24, 60, 60];
-                circle.style.strokeDashoffset = 471 - (471 * timeUnits[index] / maxValues[index]);
+                circle.style.strokeDashoffset = 283 - (283 * timeUnits[index] / maxValues[index]);
             });
         }
 
