@@ -12,42 +12,54 @@
       font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start; /* Aligns countdown to the left */
       justify-content: center;
       text-align: center;
+      width: 100%;
+      max-width: 100%;
     }
+
     .countdown-heading {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       color: #000;
       margin: 10px 0;
+      text-align: left;
+      width: 100%;
     }
+
     .countdown-container {
       display: flex;
-      gap: 15px;
-      justify-content: center;
+      gap: 20px; /* Increases spacing between circles */
+      justify-content: flex-start; /* Moves countdown to the left */
       align-items: center;
+      width: 100%;
     }
+
     .countdown-item {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     .label {
       font-size: 14px;
       font-weight: bold;
       color: #000;
       margin-bottom: 4px;
     }
+
     .circle-timer {
       position: relative;
-      width: 100px;
-      height: 100px;
+      width: 130px; /* Increased size */
+      height: 130px;
     }
+
     svg {
       width: 100%;
       height: 100%;
     }
+
     circle {
       fill: none;
       stroke-width: 6;
@@ -56,23 +68,44 @@
       stroke-dashoffset: 450;
       transition: stroke-dashoffset 1s linear;
     }
+
     .bg-circle {
       stroke: #ccc;
     }
+
     .progress-circle {
       stroke: url(#gradient);
     }
+
     .flip-box {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 20px;
+      font-size: 22px; /* Adjusted for readability */
       font-weight: bold;
       color: #000;
       background: rgba(255, 255, 255, 0.8);
-      padding: 5px 10px;
-      border-radius: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    /* Responsive Design for Mobile */
+    @media screen and (max-width: 768px) {
+      .countdown-container {
+        flex-direction: column; /* Stacks countdown items on mobile */
+        gap: 15px;
+        align-items: center;
+      }
+
+      .circle-timer {
+        width: 100px; /* Reduces size on mobile */
+        height: 100px;
+      }
+
+      .flip-box {
+        font-size: 18px; /* Adjusts number size */
+      }
     }
   </style>
 </head>
