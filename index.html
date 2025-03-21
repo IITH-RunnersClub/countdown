@@ -12,7 +12,7 @@
       font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
       text-align: center;
       width: 100%;
@@ -20,18 +20,20 @@
     }
 
     .countdown-heading {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: bold;
       color: #000;
-      margin-bottom: 15px;
-      text-align: left;
-      width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
+      background: linear-gradient(to right, #ff512f, #dd2476);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .countdown-container {
       display: flex;
-      gap: 30px;
-      justify-content: space-around;
+      gap: 40px;
+      justify-content: center;
       align-items: center;
       width: 100%;
     }
@@ -40,11 +42,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 22%;
+      width: 20%;
     }
 
     .label {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
       color: #000;
       margin-bottom: 5px;
@@ -52,8 +54,8 @@
 
     .circle-timer {
       position: relative;
-      width: 160px;
-      height: 160px;
+      width: 150px;
+      height: 150px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -66,7 +68,7 @@
 
     circle {
       fill: none;
-      stroke-width: 10;
+      stroke-width: 8;
       stroke-linecap: round;
       stroke-dasharray: 471;
       stroke-dashoffset: 471;
@@ -74,7 +76,7 @@
     }
 
     .bg-circle {
-      stroke: #ccc;
+      stroke: #e0e0e0;
     }
 
     .progress-circle {
@@ -86,7 +88,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 24px;
+      font-size: 22px;
       font-weight: bold;
       color: #000;
       background: rgba(255, 255, 255, 0.8);
@@ -119,7 +121,7 @@
   </style>
 </head>
 <body>
-  <div class="countdown-heading">🏃‍♂️ Gear Up for the Ultimate Run! 🏃‍♀️</div>
+  <div class="countdown-heading">Train Hard, Run Fast – IITH Half Marathon Countdown</div>
   <div class="countdown-container">
     <!-- Days -->
     <div class="countdown-item" data-type="days">
@@ -128,8 +130,8 @@
         <svg viewBox="0 0 200 200">
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="red"/>
-              <stop offset="100%" stop-color="orange"/>
+              <stop offset="0%" stop-color="#ff512f"/>
+              <stop offset="100%" stop-color="#dd2476"/>
             </linearGradient>
           </defs>
           <circle class="bg-circle" cx="100" cy="100" r="75"></circle>
