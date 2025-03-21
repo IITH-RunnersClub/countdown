@@ -1,212 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IITH Marathon Countdown Widget</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: transparent;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      width: 100%;
-      max-width: 100%;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IITH Half Marathon Countdown</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
 
-    .countdown-heading {
-      font-size: 28px;
-      font-weight: bold;
-      color: #000;
-      margin-bottom: 20px;
-      text-align: center;
-      background: linear-gradient(to right, #ff512f, #dd2476);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+        .countdown-heading {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
 
-    .countdown-container {
-      display: flex;
-      gap: 40px;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
+        .countdown-container {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            align-items: center;
+            max-width: 100vw;
+            overflow: hidden;
+        }
 
-    .countdown-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 20%;
-    }
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
 
-    .label {
-      font-size: 18px;
-      font-weight: bold;
-      color: #000;
-      margin-bottom: 5px;
-    }
+        .label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 5px;
+        }
 
-    .circle-timer {
-      position: relative;
-      width: 150px;
-      height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        .circle-timer {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    svg {
-      width: 100%;
-      height: 100%;
-    }
+        svg {
+            width: 100%;
+            height: 100%;
+        }
 
-    circle {
-      fill: none;
-      stroke-width: 8;
-      stroke-linecap: round;
-      stroke-dasharray: 471;
-      stroke-dashoffset: 471;
-      transition: stroke-dashoffset 1s linear;
-    }
+        circle {
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
+            stroke-dasharray: 471;
+            stroke-dashoffset: 471;
+            transition: stroke-dashoffset 1s linear;
+        }
 
-    .bg-circle {
-      stroke: #e0e0e0;
-    }
+        .bg-circle {
+            stroke: #e0e0e0;
+        }
 
-    .progress-circle {
-      stroke-width: 8;
-      stroke-linecap: round;
-      stroke: url(#gradient);
-    }
+        .progress-circle {
+            stroke-width: 10;
+            stroke-linecap: round;
+            stroke: url(#gradient);
+        }
 
-    .flip-box {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 22px;
-      font-weight: bold;
-      color: #000;
-      background: rgba(255, 255, 255, 0.8);
-      padding: 6px 12px;
-      border-radius: 8px;
-    }
+        .flip-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 6px 12px;
+            border-radius: 8px;
+        }
 
-    /* Responsive Design for Mobile */
-    @media screen and (max-width: 768px) {
-      .countdown-container {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-      }
+        /* Mobile Optimization */
+        @media screen and (max-width: 768px) {
+            .countdown-container {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
 
-      .circle-timer {
-        width: 110px;
-        height: 110px;
-      }
+            .circle-timer {
+                width: 110px;
+                height: 110px;
+            }
 
-      .flip-box {
-        font-size: 18px;
-      }
+            .flip-box {
+                font-size: 18px;
+            }
 
-      .countdown-item[data-type="minutes"],
-      .countdown-item[data-type="seconds"] {
-        display: none;
-      }
-    }
-  </style>
+            /* Hide Minutes & Seconds on Mobile */
+            .countdown-item[data-type="minutes"],
+            .countdown-item[data-type="seconds"] {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="countdown-heading">Train Hard, Run Fast – IITH Half Marathon Countdown</div>
-  <div class="countdown-container">
-    <!-- Days -->
-    <div class="countdown-item" data-type="days">
-      <div class="label">Days</div>
-      <div class="circle-timer">
-        <svg viewBox="0 0 200 200">
-          <defs>
-            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#ff512f"/>
-              <stop offset="100%" stop-color="#dd2476"/>
-            </linearGradient>
-          </defs>
-          <circle class="bg-circle" cx="100" cy="100" r="75"></circle>
-          <circle class="progress-circle" cx="100" cy="100" r="75" stroke="url(#gradient)" id="days-circle"></circle>
-        </svg>
-        <div class="flip-box" id="days">
-          <div class="flip-number">00</div>
+
+    <div class="countdown-heading">Train Hard, Run Fast – IITH Half Marathon Countdown</div>
+
+    <div class="countdown-container">
+        <!-- Days -->
+        <div class="countdown-item" data-type="days">
+            <div class="label">Days</div>
+            <div class="circle-timer">
+                <svg viewBox="0 0 200 200">
+                    <defs>
+                        <linearGradient id="gradient-days" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="red"/>
+                            <stop offset="100%" stop-color="orange"/>
+                        </linearGradient>
+                    </defs>
+                    <circle class="bg-circle" cx="100" cy="100" r="75"></circle>
+                    <circle class="progress-circle" cx="100" cy="100" r="75" stroke="url(#gradient-days)" id="days-circle"></circle>
+                </svg>
+                <div class="flip-box" id="days">
+                    <div class="flip-number">00</div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <!-- Hours -->
+        <div class="countdown-item" data-type="hours">
+            <div class="label">Hours</div>
+            <div class="circle-timer">
+                <svg viewBox="0 0 200 200">
+                    <defs>
+                        <linearGradient id="gradient-hours" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="blue"/>
+                            <stop offset="100%" stop-color="cyan"/>
+                        </linearGradient>
+                    </defs>
+                    <circle class="bg-circle" cx="100" cy="100" r="75"></circle>
+                    <circle class="progress-circle" cx="100" cy="100" r="75" stroke="url(#gradient-hours)" id="hours-circle"></circle>
+                </svg>
+                <div class="flip-box" id="hours">
+                    <div class="flip-number">00</div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Hours -->
-    <div class="countdown-item" data-type="hours">
-      <div class="label">Hours</div>
-      <div class="circle-timer">
-        <svg viewBox="0 0 200 200">
-          <circle class="bg-circle" cx="100" cy="100" r="75"></circle>
-          <circle class="progress-circle" cx="100" cy="100" r="75" stroke="url(#gradient)" id="hours-circle"></circle>
-        </svg>
-        <div class="flip-box" id="hours">
-          <div class="flip-number">00</div>
-        </div>
-      </div>
-    </div>
+    <script>
+        function updateCountdown() {
+            const eventDate = new Date("2025-11-30T00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
 
-    <!-- Minutes -->
-    <div class="countdown-item" data-type="minutes">
-      <div class="label">Minutes</div>
-      <div class="circle-timer">
-        <svg viewBox="0 0 200 200">
-          <circle class="bg-circle" cx="100" cy="100" r="75"></circle>
-          <circle class="progress-circle" cx="100" cy="100" r="75" stroke="url(#gradient)" id="minutes-circle"></circle>
-        </svg>
-        <div class="flip-box" id="minutes">
-          <div class="flip-number">00</div>
-        </div>
-      </div>
-    </div>
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-    <!-- Seconds -->
-    <div class="countdown-item" data-type="seconds">
-      <div class="label">Seconds</div>
-      <div class="circle-timer">
-        <svg viewBox="0 0 200 200">
-          <circle class="bg-circle" cx="100" cy="100" r="75"></circle>
-          <circle class="progress-circle" cx="100" cy="100" r="75" stroke="url(#gradient)" id="seconds-circle"></circle>
-        </svg>
-        <div class="flip-box" id="seconds">
-          <div class="flip-number">00</div>
-        </div>
-      </div>
-    </div>
-  </div>
+            document.querySelector('#days .flip-number').textContent = days.toString().padStart(2, '0');
+            document.querySelector('#hours .flip-number').textContent = hours.toString().padStart(2, '0');
 
-  <script>
-    function updateCountdown() {
-      const eventDate = new Date("2025-11-30T00:00:00").getTime();
-      const now = new Date().getTime();
-      const timeLeft = eventDate - now;
+            const daysProgress = 471 - (471 * days / 365);
+            const hoursProgress = 471 - (471 * hours / 24);
 
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            document.getElementById('days-circle').style.strokeDashoffset = daysProgress;
+            document.getElementById('hours-circle').style.strokeDashoffset = hoursProgress;
+        }
 
-      document.querySelector('#days .flip-number').textContent = days.toString().padStart(2, '0');
-      document.querySelector('#hours .flip-number').textContent = hours.toString().padStart(2, '0');
-      document.querySelector('#minutes .flip-number').textContent = minutes.toString().padStart(2, '0');
-      document.querySelector('#seconds .flip-number').textContent = seconds.toString().padStart(2, '0');
-    }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
 </body>
 </html>
