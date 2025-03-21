@@ -20,7 +20,7 @@
             overflow-x: hidden;
         }
 
-        /* 🏆 Title Always Visible */
+        /* 🏆 Title (Normal for desktop, tiny for mobile) */
         .countdown-heading {
             font-size: 20px;
             font-weight: bold;
@@ -28,7 +28,7 @@
             margin-bottom: 15px;
             text-align: center;
             width: 100%;
-            padding: 8px;
+            padding: 5px;
             background-color: transparent;
             position: sticky;
             top: 0;
@@ -118,34 +118,39 @@
             text-align: center;
         }
 
-        /* 📱 Mobile Adjustments */
+        /* 📱 Mobile Adjustments (Tiny Widget for Mobile) */
         @media screen and (max-width: 768px) {
+            .countdown-heading {
+                font-size: 14px; /* Tiny Title */
+                padding: 2px;
+            }
+
             .countdown-container {
                 flex-direction: column;
-                gap: 15px;
+                gap: 10px;
             }
 
             .circle-timer {
-                width: 100px;
-                height: 100px;
+                width: 60px; /* Tiny Circles */
+                height: 60px;
             }
 
             svg {
-                width: 100px;
-                height: 100px;
+                width: 60px;
+                height: 60px;
             }
 
             .flip-box {
-                width: 40px;
-                height: 35px;
-                font-size: 18px;
+                width: 30px;
+                height: 25px;
+                font-size: 14px; /* Tiny Numbers */
             }
 
             .label {
-                font-size: 14px;
+                font-size: 12px;
             }
 
-            /* ❌ Hide "Minutes" and "Seconds" on Mobile */
+            /* ❌ Hide "Hours", "Minutes" and "Seconds" on Mobile */
             .hide-on-mobile {
                 display: none !important;
             }
@@ -168,7 +173,8 @@
             </div>
         </div>
 
-        <div class="countdown-item">
+        <!-- Hide Hours, Minutes, and Seconds on Mobile -->
+        <div class="countdown-item hide-on-mobile">
             <div class="label">Hours</div>
             <div class="circle-timer">
                 <svg viewBox="0 0 120 120">
@@ -179,7 +185,6 @@
             </div>
         </div>
 
-        <!-- Minutes (Hidden on Mobile) -->
         <div class="countdown-item hide-on-mobile">
             <div class="label">Minutes</div>
             <div class="circle-timer">
@@ -191,7 +196,6 @@
             </div>
         </div>
 
-        <!-- Seconds (Hidden on Mobile) -->
         <div class="countdown-item hide-on-mobile">
             <div class="label">Seconds</div>
             <div class="circle-timer">
