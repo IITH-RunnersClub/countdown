@@ -30,8 +30,8 @@
 
     .countdown-container {
       display: flex;
-      gap: 40px; /* Increase spacing between countdown elements */
-      justify-content: space-between; /* Spread elements to fill space */
+      gap: 30px;
+      justify-content: space-between;
       align-items: center;
       width: 100%;
     }
@@ -40,7 +40,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 45%; /* Forces each countdown element to take up space */
+      width: 20%; /* Ensures even spacing */
     }
 
     .label {
@@ -52,8 +52,8 @@
 
     .circle-timer {
       position: relative;
-      width: 180px; /* Increased size */
-      height: 180px;
+      width: 130px;
+      height: 130px;
     }
 
     svg {
@@ -83,29 +83,35 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 26px; /* Larger numbers for better visibility */
+      font-size: 24px;
       font-weight: bold;
       color: #000;
       background: rgba(255, 255, 255, 0.8);
-      padding: 8px 14px;
+      padding: 6px 12px;
       border-radius: 8px;
     }
 
-    /* Responsive Design for Mobile */
+    /* Hide Minutes & Seconds on Mobile */
     @media screen and (max-width: 768px) {
       .countdown-container {
-        flex-direction: column; /* Stack items for mobile */
+        flex-direction: column;
         gap: 20px;
         align-items: center;
       }
 
       .circle-timer {
-        width: 120px; /* Reduce size on mobile */
-        height: 120px;
+        width: 100px;
+        height: 100px;
       }
 
       .flip-box {
-        font-size: 20px;
+        font-size: 18px;
+      }
+
+      /* Hide minutes & seconds */
+      .countdown-item[data-type="minutes"],
+      .countdown-item[data-type="seconds"] {
+        display: none;
       }
     }
   </style>
@@ -114,7 +120,7 @@
   <div class="countdown-heading">IITH Half Marathon Countdown</div>
   <div class="countdown-container">
     <!-- Days -->
-    <div class="countdown-item">
+    <div class="countdown-item" data-type="days">
       <div class="label">Days</div>
       <div class="circle-timer">
         <svg viewBox="0 0 170 170">
@@ -134,7 +140,7 @@
     </div>
 
     <!-- Hours -->
-    <div class="countdown-item">
+    <div class="countdown-item" data-type="hours">
       <div class="label">Hours</div>
       <div class="circle-timer">
         <svg viewBox="0 0 170 170">
@@ -142,6 +148,34 @@
           <circle class="progress-circle" cx="85" cy="85" r="75" id="hours-circle"></circle>
         </svg>
         <div class="flip-box" id="hours">
+          <div class="flip-number">00</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Minutes (Only on Desktop) -->
+    <div class="countdown-item" data-type="minutes">
+      <div class="label">Minutes</div>
+      <div class="circle-timer">
+        <svg viewBox="0 0 170 170">
+          <circle class="bg-circle" cx="85" cy="85" r="75"></circle>
+          <circle class="progress-circle" cx="85" cy="85" r="75" id="minutes-circle"></circle>
+        </svg>
+        <div class="flip-box" id="minutes">
+          <div class="flip-number">00</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seconds (Only on Desktop) -->
+    <div class="countdown-item" data-type="seconds">
+      <div class="label">Seconds</div>
+      <div class="circle-timer">
+        <svg viewBox="0 0 170 170">
+          <circle class="bg-circle" cx="85" cy="85" r="75"></circle>
+          <circle class="progress-circle" cx="85" cy="85" r="75" id="seconds-circle"></circle>
+        </svg>
+        <div class="flip-box" id="seconds">
           <div class="flip-number">00</div>
         </div>
       </div>
@@ -156,15 +190,13 @@
 
       const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
       const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
       document.querySelector('#days .flip-number').textContent = days.toString().padStart(2, '0');
       document.querySelector('#hours .flip-number').textContent = hours.toString().padStart(2, '0');
-
-      const daysProgress = 450 - (450 * days / 365);
-      const hoursProgress = 450 - (450 * hours / 24);
-
-      document.getElementById('days-circle').style.strokeDashoffset = daysProgress;
-      document.getElementById('hours-circle').style.strokeDashoffset = hoursProgress;
+      document.querySelector('#minutes .flip-number').textContent = minutes.toString().padStart(2, '0');
+      document.querySelector('#seconds .flip-number').textContent = seconds.toString().padStart(2, '0');
     }
 
     updateCountdown();
