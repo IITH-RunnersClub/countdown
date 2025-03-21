@@ -52,7 +52,7 @@
 
     .circle-timer {
       position: relative;
-      width: 160px; /* Increased size */
+      width: 160px;
       height: 160px;
     }
 
@@ -63,10 +63,10 @@
 
     circle {
       fill: none;
-      stroke-width: 10; /* Thicker stroke */
+      stroke-width: 8;
       stroke-linecap: round;
-      stroke-dasharray: 472; /* Adjusted to fit full ring */
-      stroke-dashoffset: 472;
+      stroke-dasharray: 471; /* Adjusted */
+      stroke-dashoffset: 471;
       transition: stroke-dashoffset 1s linear;
     }
 
@@ -116,21 +116,21 @@
   </style>
 </head>
 <body>
-  <div class="countdown-heading">IITH Half Marathon Countdown</div>
+  <div class="countdown-heading">🏃‍♂️ Gear Up for the Ultimate Run! 🏃‍♀️</div>
   <div class="countdown-container">
     <!-- Days -->
     <div class="countdown-item" data-type="days">
       <div class="label">Days</div>
       <div class="circle-timer">
-        <svg viewBox="0 0 180 180"> <!-- Increased ViewBox -->
+        <svg viewBox="0 0 200 200"> <!-- Fixed ViewBox -->
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="red"/>
               <stop offset="100%" stop-color="orange"/>
             </linearGradient>
           </defs>
-          <circle class="bg-circle" cx="90" cy="90" r="80"></circle>
-          <circle class="progress-circle" cx="90" cy="90" r="80" id="days-circle"></circle>
+          <circle class="bg-circle" cx="100" cy="100" r="75"></circle>
+          <circle class="progress-circle" cx="100" cy="100" r="75" id="days-circle"></circle>
         </svg>
         <div class="flip-box" id="days">
           <div class="flip-number">00</div>
@@ -142,9 +142,9 @@
     <div class="countdown-item" data-type="hours">
       <div class="label">Hours</div>
       <div class="circle-timer">
-        <svg viewBox="0 0 180 180">
-          <circle class="bg-circle" cx="90" cy="90" r="80"></circle>
-          <circle class="progress-circle" cx="90" cy="90" r="80" id="hours-circle"></circle>
+        <svg viewBox="0 0 200 200">
+          <circle class="bg-circle" cx="100" cy="100" r="75"></circle>
+          <circle class="progress-circle" cx="100" cy="100" r="75" id="hours-circle"></circle>
         </svg>
         <div class="flip-box" id="hours">
           <div class="flip-number">00</div>
@@ -156,9 +156,9 @@
     <div class="countdown-item" data-type="minutes">
       <div class="label">Minutes</div>
       <div class="circle-timer">
-        <svg viewBox="0 0 180 180">
-          <circle class="bg-circle" cx="90" cy="90" r="80"></circle>
-          <circle class="progress-circle" cx="90" cy="90" r="80" id="minutes-circle"></circle>
+        <svg viewBox="0 0 200 200">
+          <circle class="bg-circle" cx="100" cy="100" r="75"></circle>
+          <circle class="progress-circle" cx="100" cy="100" r="75" id="minutes-circle"></circle>
         </svg>
         <div class="flip-box" id="minutes">
           <div class="flip-number">00</div>
@@ -170,9 +170,9 @@
     <div class="countdown-item" data-type="seconds">
       <div class="label">Seconds</div>
       <div class="circle-timer">
-        <svg viewBox="0 0 180 180">
-          <circle class="bg-circle" cx="90" cy="90" r="80"></circle>
-          <circle class="progress-circle" cx="90" cy="90" r="80" id="seconds-circle"></circle>
+        <svg viewBox="0 0 200 200">
+          <circle class="bg-circle" cx="100" cy="100" r="75"></circle>
+          <circle class="progress-circle" cx="100" cy="100" r="75" id="seconds-circle"></circle>
         </svg>
         <div class="flip-box" id="seconds">
           <div class="flip-number">00</div>
