@@ -12,7 +12,7 @@
       font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* Aligns countdown to the left */
+      align-items: flex-start; /* Ensures countdown is on the left */
       justify-content: center;
       text-align: center;
       width: 100%;
@@ -20,18 +20,18 @@
     }
 
     .countdown-heading {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: bold;
       color: #000;
-      margin: 10px 0;
+      margin-bottom: 15px;
       text-align: left;
       width: 100%;
     }
 
     .countdown-container {
       display: flex;
-      gap: 20px; /* Increases spacing between circles */
-      justify-content: flex-start; /* Moves countdown to the left */
+      gap: 40px; /* Increase spacing between countdown elements */
+      justify-content: space-between; /* Spread elements to fill space */
       align-items: center;
       width: 100%;
     }
@@ -40,19 +40,20 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 45%; /* Forces each countdown element to take up space */
     }
 
     .label {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: bold;
       color: #000;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
     .circle-timer {
       position: relative;
-      width: 130px; /* Increased size */
-      height: 130px;
+      width: 180px; /* Increased size */
+      height: 180px;
     }
 
     svg {
@@ -62,7 +63,7 @@
 
     circle {
       fill: none;
-      stroke-width: 6;
+      stroke-width: 8;
       stroke-linecap: round;
       stroke-dasharray: 450;
       stroke-dashoffset: 450;
@@ -82,29 +83,29 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 22px; /* Adjusted for readability */
+      font-size: 26px; /* Larger numbers for better visibility */
       font-weight: bold;
       color: #000;
       background: rgba(255, 255, 255, 0.8);
-      padding: 6px 12px;
+      padding: 8px 14px;
       border-radius: 8px;
     }
 
     /* Responsive Design for Mobile */
     @media screen and (max-width: 768px) {
       .countdown-container {
-        flex-direction: column; /* Stacks countdown items on mobile */
-        gap: 15px;
+        flex-direction: column; /* Stack items for mobile */
+        gap: 20px;
         align-items: center;
       }
 
       .circle-timer {
-        width: 100px; /* Reduces size on mobile */
-        height: 100px;
+        width: 120px; /* Reduce size on mobile */
+        height: 120px;
       }
 
       .flip-box {
-        font-size: 18px; /* Adjusts number size */
+        font-size: 20px;
       }
     }
   </style>
