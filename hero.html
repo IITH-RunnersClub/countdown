@@ -541,7 +541,134 @@ line-height:1.7;
 font-size:16px;
 
 }
+/*=========================
+RACE CATEGORIES
+==========================*/
 
+.categories{
+
+padding:100px 8%;
+
+background:white;
+
+}
+
+.category-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:35px;
+
+margin-top:60px;
+
+}
+
+.category-card{
+
+background:#fff;
+
+border-radius:20px;
+
+padding:40px 30px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.category-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.featured{
+
+border:3px solid #F7931E;
+
+}
+
+.distance{
+
+font-size:54px;
+
+font-weight:800;
+
+font-family:'Montserrat',sans-serif;
+
+color:#F7931E;
+
+margin-bottom:15px;
+
+}
+
+.category-card h3{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+}
+
+.category-card p{
+
+line-height:1.7;
+
+color:#666;
+
+margin-bottom:25px;
+
+}
+
+.category-card ul{
+
+list-style:none;
+
+margin-bottom:30px;
+
+}
+
+.category-card li{
+
+padding:8px 0;
+
+color:#444;
+
+}
+
+.category-btn{
+
+display:inline-block;
+
+padding:14px 28px;
+
+background:#F7931E;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:30px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.category-btn:hover{
+
+background:#ffab3d;
+
+}
+ 
 @media(max-width:768px){
 
 .hero{
@@ -990,6 +1117,7 @@ aria-label="Scroll">
 
 </section>
 
+
 <section id="why-run" class="why-run-section">
 
 <div class="section-title">
@@ -1077,6 +1205,106 @@ Join students, faculty, alumni and runners from across India.
 </div>
 
 </section>  
+
+<section id="categories" class="categories">
+
+<div class="section-title">
+
+<h2>Choose Your Challenge</h2>
+
+<p>Select the race category that matches your fitness and goals.</p>
+
+</div>
+
+<div class="category-grid">
+
+<div class="category-card featured">
+
+<div class="distance">21.1K</div>
+
+<h3>Half Marathon</h3>
+
+<p>Challenge yourself with the flagship race through the IIT Hyderabad campus.</p>
+
+<ul>
+
+<li>🏅 RFID Timing</li>
+<li>🎖 Finisher Medal</li>
+<li>🥤 Hydration Support</li>
+<li>📜 Digital Certificate</li>
+
+</ul>
+
+<a href="#" class="category-btn">Register</a>
+
+</div>
+
+<div class="category-card">
+
+<div class="distance">10K</div>
+
+<h3>Timed Run</h3>
+
+<p>Perfect for experienced runners looking to improve their timing.</p>
+
+<ul>
+
+<li>🏅 RFID Timing</li>
+<li>🎖 Medal</li>
+<li>🥤 Water Stations</li>
+<li>📜 Certificate</li>
+
+</ul>
+
+<a href="#" class="category-btn">Register</a>
+
+</div>
+
+<div class="category-card">
+
+<div class="distance">5K</div>
+
+<h3>Fun Run</h3>
+
+<p>Ideal for beginners, families and fitness enthusiasts.</p>
+
+<ul>
+
+<li>🎉 Fun Event</li>
+<li>🎖 Medal</li>
+<li>🥤 Water Station</li>
+<li>📷 Photo Points</li>
+
+</ul>
+
+<a href="#" class="category-btn">Register</a>
+
+</div>
+
+<div class="category-card">
+
+<div class="distance">3K</div>
+
+<h3>Walkathon</h3>
+
+<p>Enjoy a relaxed walk around the scenic IIT Hyderabad campus.</p>
+
+<ul>
+
+<li>🚶 Open for Everyone</li>
+<li>🎖 Participation Medal</li>
+<li>🌳 Scenic Route</li>
+<li>❤️ Healthy Lifestyle</li>
+
+</ul>
+
+<a href="#" class="category-btn">Register</a>
+
+</div>
+
+</div>
+
+</section>
 
 <script>
 
