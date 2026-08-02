@@ -364,6 +364,184 @@ transform:translateX(-50%) translateY(5px);
 
 }
 
+ /* ==========================================
+COUNTDOWN
+========================================== */
+
+.countdown-section{
+
+padding:90px 20px;
+
+background:#ffffff;
+
+text-align:center;
+
+color:#222;
+
+}
+
+.section-title h2{
+
+font-family:'Montserrat',sans-serif;
+
+font-size:44px;
+
+margin-bottom:12px;
+
+color:#111;
+
+}
+
+.section-title p{
+
+font-size:18px;
+
+color:#666;
+
+margin-bottom:50px;
+
+}
+
+.countdown-container{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+}
+
+.time-box{
+
+width:170px;
+
+background:#fff;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.time-box:hover{
+
+transform:translateY(-8px);
+
+}
+
+.time-number{
+
+font-family:'Montserrat',sans-serif;
+
+font-size:52px;
+
+font-weight:800;
+
+color:#F7931E;
+
+}
+
+.time-label{
+
+margin-top:10px;
+
+font-size:18px;
+
+font-weight:600;
+
+color:#555;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+} 
+
+/*======================================
+WHY RUN
+=======================================*/
+
+.why-run-section{
+
+padding:100px 8%;
+
+background:#f7f8fb;
+
+}
+
+.feature-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:35px;
+
+margin-top:60px;
+
+}
+
+.feature-card{
+
+background:white;
+
+padding:40px 30px;
+
+border-radius:20px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+text-align:center;
+
+}
+
+.feature-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 20px 45px rgba(247,147,30,.18);
+
+}
+
+.feature-icon{
+
+font-size:55px;
+
+margin-bottom:20px;
+
+}
+
+.feature-card h3{
+
+font-family:'Montserrat',sans-serif;
+
+margin-bottom:15px;
+
+font-size:24px;
+
+color:#111;
+
+}
+
+.feature-card p{
+
+color:#666;
+
+line-height:1.7;
+
+font-size:16px;
+
+}
+
 @media(max-width:768px){
 
 .hero{
@@ -542,6 +720,18 @@ transition:.3s;
 
 }
 
+.feature-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.feature-card{
+
+padding:30px;
+
+}  
+
 .nav-register:hover{
 
 background:var(--primary-hover);
@@ -557,6 +747,32 @@ font-size:28px;
 cursor:pointer;
 
 }
+.countdown-section{
+
+padding:60px 20px;
+
+}
+
+.section-title h2{
+
+font-size:30px;
+
+}
+
+.time-box{
+
+width:140px;
+
+padding:20px;
+
+}
+
+.time-number{
+
+font-size:36px;
+
+}
+  
 
 /* ==============================
 Responsive Navbar
@@ -726,17 +942,177 @@ aria-label="Scroll">
 <!-- ==========================
  Countdown Placeholder
 =========================== -->
+<section id="countdown" class="countdown-section">
 
-<section id="countdown">
+<div class="section-title">
 
-<div style="height:120px;background:#fff;color:#222;display:flex;justify-content:center;align-items:center;font-size:32px;font-weight:bold;">
+<h2>Race Starts In</h2>
 
-Countdown Coming Next →
+<p>Join thousands of runners at IIT Hyderabad</p>
+
+</div>
+
+<div class="countdown-container">
+
+<div class="time-box">
+
+<div id="days" class="time-number">000</div>
+
+<div class="time-label">Days</div>
+
+</div>
+
+<div class="time-box">
+
+<div id="hours" class="time-number">00</div>
+
+<div class="time-label">Hours</div>
+
+</div>
+
+<div class="time-box">
+
+<div id="minutes" class="time-number">00</div>
+
+<div class="time-label">Minutes</div>
+
+</div>
+
+<div class="time-box">
+
+<div id="seconds" class="time-number">00</div>
+
+<div class="time-label">Seconds</div>
+
+</div>
 
 </div>
 
 </section>
 
+<section id="why-run" class="why-run-section">
+
+<div class="section-title">
+
+<h2>Why Run With Us?</h2>
+
+<p>Experience one of India's most beautiful university campus runs.</p>
+
+</div>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+
+<div class="feature-icon">🏃</div>
+
+<h3>4 Race Categories</h3>
+
+<p>
+Whether you're a beginner or an experienced runner, there's a race for everyone.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">🏅</div>
+
+<h3>Professional Timing</h3>
+
+<p>
+RFID-based timing system with accurate race results and finisher certificates.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">🌳</div>
+
+<h3>Scenic IIT Hyderabad Campus</h3>
+
+<p>
+Run through one of India's most beautiful green campuses with modern architecture.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">❤️</div>
+
+<h3>Medical & Hydration Support</h3>
+
+<p>
+Well-equipped hydration stations and medical support available throughout the race.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">🎖️</div>
+
+<h3>Finisher Medal</h3>
+
+<p>
+Every finisher receives a beautifully designed commemorative medal.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">👨‍👩‍👧‍👦</div>
+
+<h3>Community Experience</h3>
+
+<p>
+Join students, faculty, alumni and runners from across India.
+</p>
+
+</div>
+
+</div>
+
+</section>  
+
+<script>
+
+const raceDate = new Date("November 22, 2026 06:00:00").getTime();
+
+function updateCountdown(){
+
+const now = new Date().getTime();
+
+const distance = raceDate - now;
+
+const days = Math.floor(distance/(1000*60*60*24));
+
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+
+const seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML=days;
+
+document.getElementById("hours").innerHTML=hours.toString().padStart(2,"0");
+
+document.getElementById("minutes").innerHTML=minutes.toString().padStart(2,"0");
+
+document.getElementById("seconds").innerHTML=seconds.toString().padStart(2,"0");
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+</script>
+
+  
 </body>
 
 </html>
