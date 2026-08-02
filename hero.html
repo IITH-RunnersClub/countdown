@@ -588,12 +588,16 @@ overflow:hidden;
 transform:translateY(-10px);
 
 }
-
 .featured{
 
 border:3px solid #F7931E;
 
+background:linear-gradient(180deg,#fff8ef,#ffffff);
+
+transform:scale(1.04);
+
 }
+
 
 .distance{
 
@@ -606,6 +610,20 @@ font-family:'Montserrat',sans-serif;
 color:#F7931E;
 
 margin-bottom:15px;
+
+}
+
+.price{
+
+font-size:36px;
+
+font-weight:700;
+
+color:#123C6A;
+
+margin:20px 0;
+
+font-family:'Montserrat',sans-serif;
 
 }
 
@@ -645,13 +663,19 @@ color:#444;
 
 .category-btn{
 
-display:inline-block;
+display:inline-flex;
 
-padding:14px 28px;
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+padding:14px 30px;
 
 background:#F7931E;
 
-color:white;
+color:#fff;
 
 text-decoration:none;
 
@@ -659,13 +683,19 @@ border-radius:30px;
 
 font-weight:600;
 
-transition:.3s;
+transition:.35s;
+
+box-shadow:0 8px 20px rgba(247,147,30,.25);
 
 }
 
 .category-btn:hover{
 
 background:#ffab3d;
+
+transform:translateY(-3px);
+
+box-shadow:0 15px 30px rgba(247,147,30,.35);
 
 }
  
@@ -1212,11 +1242,13 @@ Join students, faculty, alumni and runners from across India.
 
 <h2>Choose Your Challenge</h2>
 
-<p>Select the race category that matches your fitness and goals.</p>
+<p>Whether you're chasing a personal best or enjoying a fun run, there's a category for everyone.</p>
 
 </div>
 
 <div class="category-grid">
+
+<!-- 21K -->
 
 <div class="category-card featured">
 
@@ -1224,20 +1256,26 @@ Join students, faculty, alumni and runners from across India.
 
 <h3>Half Marathon</h3>
 
-<p>Challenge yourself with the flagship race through the IIT Hyderabad campus.</p>
+<div class="price">₹999</div>
 
 <ul>
 
 <li>🏅 RFID Timing</li>
 <li>🎖 Finisher Medal</li>
-<li>🥤 Hydration Support</li>
 <li>📜 Digital Certificate</li>
+<li>🥤 Hydration Support</li>
 
 </ul>
 
-<a href="#" class="category-btn">Register</a>
+<a href="https://YOUR-REGISTRATION-LINK" class="category-btn">
+
+Register Now →
+
+</a>
 
 </div>
+
+<!-- 10K -->
 
 <div class="category-card">
 
@@ -1245,20 +1283,53 @@ Join students, faculty, alumni and runners from across India.
 
 <h3>Timed Run</h3>
 
-<p>Perfect for experienced runners looking to improve their timing.</p>
+<div class="price">₹799</div>
 
 <ul>
 
 <li>🏅 RFID Timing</li>
-<li>🎖 Medal</li>
-<li>🥤 Water Stations</li>
-<li>📜 Certificate</li>
+<li>🎖 Finisher Medal</li>
+<li>📜 Digital Certificate</li>
+<li>🥤 Hydration Support</li>
 
 </ul>
 
-<a href="#" class="category-btn">Register</a>
+<a href="https://YOUR-REGISTRATION-LINK" class="category-btn">
+
+Register Now →
+
+</a>
 
 </div>
+
+<!-- 5K Timed -->
+
+<div class="category-card">
+
+<div class="distance">5K</div>
+
+<h3>Timed Run</h3>
+
+<div class="price">₹599</div>
+
+<ul>
+
+<li>🏅 RFID Timing</li>
+<li>🎖 Finisher Medal</li>
+<li>📜 Digital Certificate</li>
+<li>🥤 Hydration Support</li>
+
+</ul>
+
+<a href="https://YOUR-REGISTRATION-LINK" class="category-btn">
+
+Register Now →
+
+</a>
+
+</div>
+
+<!-- 5K Fun -->
 
 <div class="category-card">
 
@@ -1266,45 +1337,29 @@ Join students, faculty, alumni and runners from across India.
 
 <h3>Fun Run</h3>
 
-<p>Ideal for beginners, families and fitness enthusiasts.</p>
+<div class="price">₹499</div>
 
 <ul>
 
-<li>🎉 Fun Event</li>
-<li>🎖 Medal</li>
-<li>🥤 Water Station</li>
-<li>📷 Photo Points</li>
+<li>🎉 Untimed Event</li>
+<li>🎖 Finisher Medal</li>
+<li>📷 Photo Opportunities</li>
+<li>❤️ Open to Everyone</li>
 
 </ul>
 
-<a href="#" class="category-btn">Register</a>
+<a href="https://YOUR-REGISTRATION-LINK" class="category-btn">
 
-</div>
+Register Now →
 
-<div class="category-card">
-
-<div class="distance">3K</div>
-
-<h3>Walkathon</h3>
-
-<p>Enjoy a relaxed walk around the scenic IIT Hyderabad campus.</p>
-
-<ul>
-
-<li>🚶 Open for Everyone</li>
-<li>🎖 Participation Medal</li>
-<li>🌳 Scenic Route</li>
-<li>❤️ Healthy Lifestyle</li>
-
-</ul>
-
-<a href="#" class="category-btn">Register</a>
+</a>
 
 </div>
 
 </div>
 
 </section>
+ 
 
 <script>
 
