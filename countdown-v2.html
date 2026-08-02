@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IITH Half Marathon Countdown V2</title>
+<style>
+:root{
+ --orange:#F7941D;
+ --navy:#173B63;
+ --bg:#f4f6f9;
+}
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,Helvetica,sans-serif;
+ background:var(--bg);
+ color:#222;
+}
+.wrapper{
+ max-width:1100px;
+ margin:auto;
+ padding:40px 20px;
+ text-align:center;
+}
+h2{
+ margin:0 0 8px;
+ color:var(--navy);
+ font-size:18px;
+ letter-spacing:2px;
+}
+.title{
+ font-size:32px;
+ font-weight:700;
+ color:var(--navy);
+ margin:10px 0 5px;
+}
+.subtitle{
+ color:#666;
+ margin-bottom:30px;
+}
+.cards{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:20px;
+}
+.card{
+ background:rgba(255,255,255,.75);
+ backdrop-filter:blur(8px);
+ border-radius:18px;
+ padding:24px;
+ box-shadow:0 8px 24px rgba(0,0,0,.08);
+ transition:.25s;
+}
+.card:hover{transform:translateY(-5px)}
+.number{
+ font-size:52px;
+ color:var(--orange);
+ font-weight:700;
+}
+.label{
+ color:var(--navy);
+ font-weight:700;
+ letter-spacing:1px;
+}
+.info{
+ margin:30px 0 20px;
+ line-height:1.8;
+}
+.btn{
+ display:inline-block;
+ background:var(--orange);
+ color:#fff;
+ text-decoration:none;
+ padding:14px 34px;
+ border-radius:999px;
+ font-weight:bold;
+}
+.btn:hover{background:#d97b09}
+@media(max-width:768px){
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .number{font-size:40px}
+ .title{font-size:26px}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<h2>🏃 RACE STARTS IN</h2>
+
+<div class="cards">
+<div class="card"><div class="number" id="days">0</div><div class="label">DAYS</div></div>
+<div class="card"><div class="number" id="hours">0</div><div class="label">HOURS</div></div>
+<div class="card"><div class="number" id="minutes">0</div><div class="label">MINUTES</div></div>
+<div class="card"><div class="number" id="seconds">0</div><div class="label">SECONDS</div></div>
+</div>
+
+<div class="info">
+<div class="title">IIT Hyderabad Half Marathon 2026</div>
+<div>📅 22 November 2026 • 5:30 AM IST</div>
+<div>📍 IIT Hyderabad Campus</div>
+</div>
+
+<a class="btn" href="https://www.iithydrunnersclub.com" target="_blank">REGISTER NOW</a>
+</div>
+
+<script>
+const target=new Date("2026-11-22T05:30:00+05:30").getTime();
+function tick(){
+ const now=new Date().getTime();
+ let d=target-now;
+ if(d<0){
+  document.querySelector(".wrapper").innerHTML="<h1>🏁 The Race Has Started!</h1>";
+  return;
+ }
+ const days=Math.floor(d/86400000);
+ const hours=Math.floor((d%86400000)/3600000);
+ const mins=Math.floor((d%3600000)/60000);
+ const secs=Math.floor((d%60000)/1000);
+ document.getElementById("days").textContent=days;
+ document.getElementById("hours").textContent=String(hours).padStart(2,"0");
+ document.getElementById("minutes").textContent=String(mins).padStart(2,"0");
+ document.getElementById("seconds").textContent=String(secs).padStart(2,"0");
+}
+tick();
+setInterval(tick,1000);
+</script>
+</body>
+</html>
