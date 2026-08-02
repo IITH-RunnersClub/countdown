@@ -21,6 +21,11 @@ background:#111;
 overflow-x:hidden;
 }
 
+html{
+scroll-behavior:smooth;
+}
+  
+
 .hero{
 
 position:relative;
@@ -194,7 +199,7 @@ transform:translateY(-3px);
 
 }
 
-.scroll{
+.scroll-indicator{
 
 position:absolute;
 
@@ -204,37 +209,97 @@ left:50%;
 
 transform:translateX(-50%);
 
-font-size:28px;
+width:50px;
 
-animation:bounce 2s infinite;
+height:50px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border:2px solid rgba(255,255,255,.45);
+
+border-radius:50%;
+
+color:white;
+
+font-size:30px;
+
+text-decoration:none;
+
+transition:.35s;
+
+animation:scrollBounce 2s infinite;
+
+backdrop-filter:blur(8px);
 
 }
 
-@keyframes bounce{
+.scroll-indicator:hover{
 
-0%,100%{
+background:rgba(255,255,255,.15);
 
-transform:translate(-50%,0);
+border-color:#F7931E;
+
+color:#F7931E;
+
+transform:translateX(-50%) scale(1.08);
+
+}
+
+.scroll-indicator span{
+
+display:block;
+
+animation:arrowMove 2s infinite;
+
+}
+
+@keyframes scrollBounce{
+
+0%,20%,50%,80%,100%{
+
+transform:translateX(-50%) translateY(0);
+
+}
+
+40%{
+
+transform:translateX(-50%) translateY(10px);
+
+}
+
+60%{
+
+transform:translateX(-50%) translateY(5px);
+
+}
+
+}
+
+@keyframes arrowMove{
+
+0%{
+
+opacity:.5;
 
 }
 
 50%{
 
-transform:translate(-50%,12px);
+opacity:1;
+
+}
+
+100%{
+
+opacity:.5;
 
 }
 
 }
- .content h1,
-.content h2,
-.year,
-.tagline,
-.info{
-
-text-shadow:0 3px 12px rgba(0,0,0,.45);
-
-} 
-
 @media(max-width:768px){
 
 .content h1{
@@ -302,19 +367,23 @@ Run Beyond Limits
 
 </div>
 
-<a href="#" class="button">
+<a href="https://YOUR-REGISTRATION-LINK"
+   class="button"
+   target="_blank">
 
-REGISTER NOW
+REGISTER NOW →
 
 </a>
 
 </div>
+  
+<a href="#countdown"
+   class="scroll-indicator"
+   aria-label="Scroll to countdown">
 
-<div class="scroll">
+<span>⌄</span>
 
-⌄
-
-</div>
+</a>
 
 </section>
 
