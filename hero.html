@@ -266,29 +266,35 @@ justify-content:center;
 
 padding:20px 58px;
 
-background:var(--primary);
+background:#F7931E;
 
-color:#fff;
+border-radius:50px;
+
+color:white;
 
 font-weight:700;
 
 text-decoration:none;
 
-border-radius:50px;
+box-shadow:
 
-box-shadow:0 12px 30px rgba(247,147,30,.35);
+0 0 25px rgba(247,147,30,.30),
 
-transition:var(--transition);
+0 12px 35px rgba(247,147,30,.25);
+
+transition:.35s;
 
 }
 
 .button:hover{
 
-background:var(--primary-hover);
+transform:translateY(-5px);
 
-transform:translateY(-3px);
+box-shadow:
 
-box-shadow:0 18px 40px rgba(247,147,30,.55);
+0 0 40px rgba(247,147,30,.55),
+
+0 18px 45px rgba(247,147,30,.35);
 
 }
 
@@ -1555,6 +1561,28 @@ background:#ffab3d;
 
 }
 
+/*==========================
+SCROLL ANIMATION
+===========================*/
+
+.hidden{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:all .9s ease;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+ 
 @media(max-width:900px){
 
 .stats-grid{
@@ -1664,11 +1692,15 @@ left:0;
 
 width:100%;
 
-z-index:999;
+padding:18px 0;
 
 transition:.4s;
 
-padding:18px 0;
+z-index:999;
+
+background:rgba(0,0,0,.15);
+
+backdrop-filter:blur(15px);
 
 }
 
@@ -2036,7 +2068,7 @@ aria-label="Scroll">
 <!-- ==========================
  Countdown Placeholder
 =========================== -->
-<section id="countdown" class="countdown-section">
+<section id="countdown" class="countdown-section hidden">
 
 <div class="section-title">
 
@@ -2084,7 +2116,7 @@ aria-label="Scroll">
 
 </section>
 
-<section id="about" class="about-section">
+<section id="about" class="about-section hidden">
 
 <div class="container">
 
@@ -2142,7 +2174,8 @@ running event.
 
 
 
-<section id="why-run" class="why-run-section">
+<section id="why-run"
+class="why-run-section hidden">
 
 <div class="section-title">
 
@@ -2230,7 +2263,8 @@ Join students, faculty, alumni and runners from across India.
 
 </section>  
 
-<section id="categories" class="categories">
+<section id="categories"
+class="categories hidden">
 
 <div class="section-title">
 
@@ -2382,7 +2416,7 @@ Register Now →
 
 </section>
 
- <section id="schedule" class="schedule-section">
+ <section id="schedule" class="schedule-section hidden">
 
 <div class="container">
 
@@ -2486,7 +2520,7 @@ Register Now →
 
 </section>
 
-<section id="route" class="route-section">
+<section id="route" class="route-section hidden">
 
 <div class="container">
 
@@ -2672,7 +2706,7 @@ View Full Route
 Gallery
 ========================== -->
 
-<section id="gallery" class="gallery-section">
+<section id="gallery" class="gallery-section hidden">
 
 <div class="container">
 
@@ -2720,7 +2754,7 @@ Gallery
 Sponsors
 ========================== -->
 
-<section id="sponsors" class="sponsors-section">
+<section id="sponsors" class="sponsors-section hidden">
 
 <div class="container">
 
@@ -2774,7 +2808,7 @@ Sponsors
 FAQ
 ========================== -->
 
-<section id="faq" class="faq-section">
+<section id="faq" class="faq-section hidden">
 
 <div class="container">
 
@@ -2898,7 +2932,7 @@ Participants are requested to report at least one hour before their respective r
 CONTACT
 ========================== -->
 
-<section id="contact" class="contact-section">
+<section id="contact" class="contact-section hidden">
 
 <div class="container">
 
@@ -2983,7 +3017,7 @@ www.iithydrunnersclub.com
 FOOTER
 ========================== -->
 
-<footer class="footer">
+<footer class="footer hidden">
 
 <div class="container">
 
@@ -3129,7 +3163,7 @@ updateCountdown();
 
 setInterval(updateCountdown,1000);
 
- const counters=document.querySelectorAll('.counter');
+const counters=document.querySelectorAll('.counter');
 
 counters.forEach(counter=>{
 
@@ -3152,6 +3186,12 @@ setTimeout(update,20);
 counter.innerText=target+"+";
 
 }
+
+}
+
+update();
+
+});
 
 }
 
@@ -3223,6 +3263,46 @@ icon.innerHTML="−";
 
 });
 
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{
+
+threshold:.15
+
+});
+
+document.querySelectorAll(".hidden").forEach(section=>{
+
+observer.observe(section);
+
+});
+
+window.addEventListener("scroll",()=>{
+
+const nav=document.querySelector(".navbar");
+
+if(window.scrollY>80){
+
+nav.style.padding="10px 0";
+
+}else{
+
+nav.style.padding="18px 0";
+
+}
+
+});
 
 </script>
 
