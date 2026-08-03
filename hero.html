@@ -987,6 +987,123 @@ box-shadow:0 0 0 4px rgba(247,147,30,.2);
 
 }
 
+ /*=============================
+ROUTE
+==============================*/
+
+.route-section{
+
+padding:100px 8%;
+
+background:white;
+
+}
+
+.route-tabs{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+margin:50px 0;
+
+flex-wrap:wrap;
+
+}
+
+.route-btn{
+
+padding:14px 30px;
+
+border:none;
+
+border-radius:40px;
+
+background:#ddd;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+font-size:17px;
+
+}
+
+.route-btn.active{
+
+background:#F7931E;
+
+color:white;
+
+}
+
+.route-grid{
+
+display:grid;
+
+grid-template-columns:1.4fr 1fr;
+
+gap:50px;
+
+align-items:center;
+
+}
+
+.route-image img{
+
+width:100%;
+
+border-radius:18px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.route-info h3{
+
+font-size:34px;
+
+margin-bottom:25px;
+
+font-family:'Montserrat',sans-serif;
+
+color:#123C6A;
+
+}
+
+.route-info ul{
+
+list-style:none;
+
+margin-bottom:35px;
+
+}
+
+.route-info li{
+
+padding:10px 0;
+
+font-size:18px;
+
+border-bottom:1px solid #eee;
+
+}
+
+.route-content{
+
+display:none;
+
+}
+
+.active-route{
+
+display:block;
+
+}
 
 @media(max-width:900px){
 
@@ -1912,6 +2029,188 @@ Register Now →
 
 </section>
 
+<section id="route" class="route-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<h2>Race Routes</h2>
+
+<p>Explore the official race routes through the beautiful IIT Hyderabad campus.</p>
+
+</div>
+
+<div class="route-tabs">
+
+<button class="route-btn active"
+onclick="showRoute('route21')">
+
+21.1K
+
+</button>
+
+<button class="route-btn"
+onclick="showRoute('route10')">
+
+10K
+
+</button>
+
+<button class="route-btn"
+onclick="showRoute('route5')">
+
+5K
+
+</button>
+
+</div>
+
+<!-- ======================
+21K
+====================== -->
+
+<div id="route21" class="route-content active-route">
+
+<div class="route-grid">
+
+<div class="route-image">
+
+<img src="assets/images/route21.png"
+alt="21K Route">
+
+</div>
+
+<div class="route-info">
+
+<h3>21.1K Half Marathon</h3>
+
+<ul>
+
+<li>🏃 Distance : 21.1 km</li>
+
+<li>🔁 Loops : 2</li>
+
+<li>💧 Hydration Stations</li>
+
+<li>🚑 Medical Support</li>
+
+<li>🚻 Toilets Available</li>
+
+<li>🏁 RFID Timing</li>
+
+</ul>
+
+<a href="assets/images/route21.png"
+target="_blank"
+class="button">
+
+View Full Route
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ======================
+10K
+====================== -->
+
+<div id="route10" class="route-content">
+
+<div class="route-grid">
+
+<div class="route-image">
+
+<img src="assets/images/route10.png"
+alt="10K Route">
+
+</div>
+
+<div class="route-info">
+
+<h3>10K Timed Run</h3>
+
+<ul>
+
+<li>🏃 Distance : 10 km</li>
+
+<li>🔁 Single Loop</li>
+
+<li>💧 Hydration Stations</li>
+
+<li>🚑 Medical Support</li>
+
+<li>🏁 RFID Timing</li>
+
+</ul>
+
+<a href="assets/images/route10.png"
+target="_blank"
+class="button">
+
+View Full Route
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ======================
+5K
+====================== -->
+
+<div id="route5" class="route-content">
+
+<div class="route-grid">
+
+<div class="route-image">
+
+<img src="assets/images/route5.png"
+alt="5K Route">
+
+</div>
+
+<div class="route-info">
+
+<h3>5K Run</h3>
+
+<ul>
+
+<li>🏃 Distance : 5 km</li>
+
+<li>🔁 Single Loop</li>
+
+<li>💧 Water Station</li>
+
+<li>🎉 Fun & Timed Run</li>
+
+</ul>
+
+<a href="assets/images/route5.png"
+target="_blank"
+class="button">
+
+View Full Route
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
 <script>
 
 const raceDate = new Date("November 22, 2026 06:00:00").getTime();
@@ -1973,6 +2272,30 @@ counter.innerText=target+"+";
 update();
 
 });
+
+const tabs=document.querySelectorAll(".route-btn");
+
+const routes=document.querySelectorAll(".route-content");
+
+function showRoute(id){
+
+routes.forEach(route=>{
+
+route.classList.remove("active-route");
+
+});
+
+tabs.forEach(btn=>{
+
+btn.classList.remove("active");
+
+});
+
+document.getElementById(id).classList.add("active-route");
+
+event.target.classList.add("active");
+
+}
 
 </script>
 
