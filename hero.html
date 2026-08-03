@@ -3217,26 +3217,19 @@ const tabs=document.querySelectorAll(".route-btn");
 
 const routes=document.querySelectorAll(".route-content");
 
-function showRoute(id){
+function showRoute(event, id){
 
-routes.forEach(route=>{
+    routes.forEach(route=>{
+        route.classList.remove("active-route");
+    });
 
-route.classList.remove("active-route");
+    tabs.forEach(btn=>{
+        btn.classList.remove("active");
+    });
 
-});
-
-tabs.forEach(btn=>{
-
-btn.classList.remove("active");
-
-});
-
-document.getElementById(id).classList.add("active-route");
-
-event.target.classList.add("active");
-
+    document.getElementById(id).classList.add("active-route");
+    event.currentTarget.classList.add("active");
 }
-
 const faq=document.querySelectorAll(".faq-question");
 
 faq.forEach(item=>{
