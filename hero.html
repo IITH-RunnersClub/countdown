@@ -853,6 +853,141 @@ font-weight:500;
 
 }
 
+/*==========================
+EVENT SCHEDULE
+===========================*/
+
+.schedule-section{
+
+padding:100px 8%;
+
+background:#f7f8fb;
+
+}
+
+.timeline{
+
+max-width:900px;
+
+margin:60px auto 0;
+
+position:relative;
+
+}
+
+.timeline::before{
+
+content:"";
+
+position:absolute;
+
+left:140px;
+
+top:0;
+
+bottom:0;
+
+width:4px;
+
+background:#F7931E;
+
+}
+
+.timeline-item{
+
+display:flex;
+
+margin-bottom:45px;
+
+position:relative;
+
+}
+
+.timeline-time{
+
+width:120px;
+
+font-weight:700;
+
+font-size:18px;
+
+font-family:'Montserrat',sans-serif;
+
+color:#123C6A;
+
+text-align:right;
+
+padding-right:30px;
+
+}
+
+.timeline-content{
+
+margin-left:50px;
+
+background:#fff;
+
+padding:25px 30px;
+
+border-radius:16px;
+
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+flex:1;
+
+transition:.3s;
+
+}
+
+.timeline-content:hover{
+
+transform:translateY(-5px);
+
+}
+
+.timeline-content h3{
+
+font-size:24px;
+
+margin-bottom:10px;
+
+color:#111;
+
+}
+
+.timeline-content p{
+
+line-height:1.7;
+
+color:#666;
+
+}
+
+.timeline-item::before{
+
+content:"";
+
+position:absolute;
+
+left:132px;
+
+top:15px;
+
+width:18px;
+
+height:18px;
+
+background:#F7931E;
+
+border-radius:50%;
+
+border:4px solid white;
+
+box-shadow:0 0 0 4px rgba(247,147,30,.2);
+
+}
+
+
 @media(max-width:900px){
 
 .stats-grid{
@@ -1128,6 +1263,43 @@ font-size:52px;
 font-size:36px;
 
 }
+
+.timeline::before{
+
+left:20px;
+
+}
+
+.timeline-item{
+
+flex-direction:column;
+
+padding-left:45px;
+
+}
+
+.timeline-time{
+
+width:auto;
+
+text-align:left;
+
+padding:0 0 10px 0;
+
+}
+
+.timeline-content{
+
+margin-left:0;
+
+}
+
+.timeline-item::before{
+
+left:11px;
+
+}
+
   
 
 /* ==============================
@@ -1636,7 +1808,109 @@ Register Now →
 
 </section>
 
- 
+ <section id="schedule" class="schedule-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<h2>Event Day Schedule</h2>
+
+<p>Be on time and enjoy a seamless race experience.</p>
+
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-time">03:30 AM</div>
+
+<div class="timeline-content">
+
+<h3>Venue Opens</h3>
+
+<p>Registration help desk, baggage deposit and race village open.</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-time">05:30 AM</div>
+
+<div class="timeline-content">
+
+<h3>Warm-up Session</h3>
+
+<p>Guided stretching and warm-up by professional fitness trainers.</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-time">06:15 AM</div>
+
+<div class="timeline-content">
+
+<h3>21.1K Half Marathon Flag-off</h3>
+
+<p>Official start of the flagship Half Marathon.</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-time">06:30 AM</div>
+
+<div class="timeline-content">
+
+<h3>10K Timed Run Flag-off</h3>
+
+<p>Professional timed race begins.</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-time">06:40 AM</div>
+
+<div class="timeline-content">
+
+<h3>5K Timed Run & Fun Run</h3>
+
+<p>Perfect for beginners, families and fitness enthusiasts.</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-time">07:30 AM</div>
+
+<div class="timeline-content">
+
+<h3>Prize Distribution Ceremony</h3>
+
+<p>Celebrating winners and participants.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <script>
 
