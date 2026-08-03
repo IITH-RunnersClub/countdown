@@ -94,6 +94,12 @@ min-height:100%;
 
 object-fit:cover;
 
+filter:brightness(.85);
+
+transform:scale(1.03);
+
+object-fit:cover;
+
 transform:translate(-50%,-50%) scale(1);
 
 animation:zoomVideo 20s ease-in-out infinite alternate;
@@ -118,23 +124,33 @@ transform:translate(-50%,-50%) scale(1.08);
 
 }
 
-.overlay{
+ .overlay{
 
 position:absolute;
 
 inset:0;
 
-background:rgba(8,39,75,.55);
+/* Dark cinematic overlay */
+
+background:linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.45)
+);
 
 z-index:-1;
 
 }
+
 
 .content{
 
 max-width:1200px;
 
 padding:20px;
+
+margin:auto;
+
+text-align:center;
 
 transform:translateY(-70px);
 
@@ -174,55 +190,61 @@ filter:drop-shadow(0 8px 20px rgba(0,0,0,.45));
 
 .content h2{
 
-font-family:'Montserrat',sans-serif;
-
-font-size:42px;
+font-size:3rem;
 
 font-weight:700;
 
-letter-spacing:2px;
+color:#FFFFFF;
 
-margin-bottom:8px;
+text-shadow:0 3px 15px rgba(0,0,0,.5);
+
+margin-bottom:10px;
 
 }
 
 .content h1{
 
-font-family:'Montserrat',sans-serif;
+font-size:7rem;
 
-font-size:100px;
+font-weight:900;
 
-font-weight:800;
+color:#F7931E;
 
-color:var(--primary);
+text-transform:uppercase;
 
-margin-bottom:8px;
+letter-spacing:2px;
 
-line-height:1;
+text-shadow:0 8px 25px rgba(0,0,0,.6);
 
 }
 
 .year{
 
-font-family:'Montserrat',sans-serif;
+font-size:4rem;
 
-font-size:60px;
+font-weight:800;
 
-font-weight:700;
+color:#FFFFFF;
 
-margin-bottom:20px;
+text-shadow:0 4px 18px rgba(0,0,0,.6);
+
+margin-top:10px;
 
 }
 
 .tagline{
 
-font-size:28px;
+font-size:2rem;
 
 font-style:italic;
 
-margin-bottom:35px;
+color:#FFFFFF;
 
 opacity:.95;
+
+text-shadow:0 3px 12px rgba(0,0,0,.5);
+
+margin:25px 0;
 
 }
 
@@ -242,17 +264,15 @@ margin-bottom:40px;
 
 .badge{
 
-background:var(--glass);
+background:rgba(255,255,255,.18);
 
 backdrop-filter:blur(12px);
 
-border:1px solid var(--border);
+border:1px solid rgba(255,255,255,.25);
 
-padding:14px 22px;
+color:#FFFFFF;
 
-border-radius:40px;
-
-font-size:17px;
+font-weight:600;
 
 }
 
@@ -1624,9 +1644,15 @@ padding:25px;
 
 .hero-logo{
 
-width:120px;
+width:180px;
+
+margin-bottom:25px;
+
+filter:
+drop-shadow(0 8px 20px rgba(0,0,0,.5));
 
 }
+
 
 .content h2{
 
