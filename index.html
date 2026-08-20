@@ -869,6 +869,123 @@ letter-spacing:1px;
 
 }
 
+ /* ==========================================
+   FINAL ALIGNMENT FIX — WHY RUN WITH US
+   ========================================== */
+
+#why-run {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 80px 8%;
+    box-sizing: border-box;
+    background: #F9FBFD;
+}
+
+#why-run .section-title {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    text-align: left;
+}
+
+#why-run .feature-grid {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    box-sizing: border-box;
+    align-items: stretch;
+}
+
+#why-run .feature-card {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 0;
+    box-shadow: none;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Remove the right border from every third card */
+#why-run .feature-card:nth-child(3n) {
+    border-right: none;
+}
+
+/* Make the cards form a clean 3 × 2 table */
+#why-run .feature-card:nth-child(-n+3) {
+    border-top: 1px solid #e5e5e5;
+}
+
+#why-run .feature-card:nth-child(3n+1) {
+    border-left: 1px solid #e5e5e5;
+}
+
+/* Keep the internal content centered */
+#why-run .feature-card {
+    text-align: center;
+    padding: 40px 30px;
+}
+
+/* Race options stay inside the first cell */
+#why-run .race-options {
+    width: 100%;
+    max-width: 100%;
+    margin: 28px auto 0;
+}
+
+/* Highlight groups stay inside their respective cells */
+#why-run .feature-highlights {
+    width: 100%;
+    max-width: 100%;
+    margin: 26px auto 0;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 800px) {
+
+    #why-run {
+        padding: 60px 20px;
+    }
+
+    #why-run .section-title {
+        margin-bottom: 35px;
+        text-align: left;
+    }
+
+    #why-run .feature-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    #why-run .feature-card {
+        border-left: 1px solid #e5e5e5;
+        border-right: 1px solid #e5e5e5;
+        border-top: none;
+    }
+
+    #why-run .feature-card:first-child {
+        border-top: 1px solid #e5e5e5;
+    }
+
+    #why-run .feature-card:nth-child(3n) {
+        border-right: 1px solid #e5e5e5;
+    }
+
+    #why-run .race-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 
 /* =========================================================
    MOBILE
