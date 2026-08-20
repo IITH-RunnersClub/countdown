@@ -613,46 +613,52 @@ font-size:16px;
    RACE OPTIONS – WHY RUN WITH US
    ========================================== */
 /* ==========================================
-   RACE OPTIONS – WHY RUN WITH US
+   RACE OPTIONS – FOUR CENTERED RACES
    ========================================== */
+
 .race-options {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    width: 750px;
-    max-width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    max-width: 900px;
     margin: 28px auto 0;
     border-top: 1px solid #eeeeee;
 }
 
 .race-option {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 9px;
-    padding: 14px 8px;
-    text-align: left;
+    justify-content: flex-start;
+    gap: 7px;
+    padding: 18px 12px;
+    text-align: center;
     border-bottom: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
     min-width: 0;
 }
 
-.race-option:nth-child(odd) {
-    border-right: 1px solid #eeeeee;
+.race-option:last-child {
+    border-right: none;
 }
 
 .race-icon {
-    font-size: 21px;
+    font-size: 24px;
+    line-height: 1;
     flex-shrink: 0;
 }
 
 .race-details {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-width: 0;
 }
 
 .race-option strong {
     display: block;
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     color: #111;
     line-height: 1.3;
@@ -660,11 +666,84 @@ font-size:16px;
 
 .race-option small {
     display: block;
-    margin-top: 2px;
+    margin-top: 3px;
     font-size: 12px;
     color: #666;
 }
 
+/* REGISTER BUTTON */
+
+.race-register {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 7px 12px;
+    background: #F7931E;
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: .3s ease;
+}
+
+.race-register:hover {
+    background: #0E4C92;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    .race-options {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .race-option {
+        padding: 15px 8px;
+    }
+
+    .race-option:nth-child(2) {
+        border-right: none;
+    }
+
+    .race-option:nth-child(4) {
+        border-right: none;
+    }
+
+    .race-icon {
+        font-size: 22px;
+    }
+
+    .race-option strong {
+        font-size: 13px;
+    }
+
+    .race-register {
+        padding: 7px 10px;
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .race-options {
+        grid-template-columns: 1fr;
+    }
+
+    .race-option {
+        border-right: none;
+        padding: 14px 8px;
+    }
+
+}
 
 /* REGISTER BUTTON */
 
@@ -2491,9 +2570,7 @@ class="why-run-section hidden">
         Whether you're a beginner or an experienced runner, there's a race for everyone.
     </p>
 
-    <div class="race-options">
-
-     <div class="race-options">
+  <div class="race-options">
 
     <div class="race-option">
         <span class="race-icon">🏅</span>
@@ -2556,7 +2633,6 @@ class="why-run-section hidden">
     </div>
 
 </div>
-
     </div>
 
 </div>
