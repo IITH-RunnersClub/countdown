@@ -530,931 +530,500 @@ letter-spacing:1px;
 }
 
 /* =========================================================
-WHY RUN WITH US — FINAL CLEAN CSS
-Single source of truth for all six feature cards
-========================================================= */
+   WHY RUN WITH US — UNIFIED FINAL CSS
+   Six feature cards in a clean 3 × 2 table
+   Preserves existing HTML class names
+   ========================================================= */
 
 #why-run {
-width: 100%;
-margin: 0;
-padding: 80px 8%;
-box-sizing: border-box;
-background: #F9FBFD;
+    width: 100%;
+    margin: 0;
+    padding: 80px 5%;
+    box-sizing: border-box;
+    background: #F9FBFD;
 }
 
 #why-run .section-title {
-width: 100%;
-max-width: 1200px;
-margin: 0 auto 45px;
-text-align: left;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 45px;
+    text-align: left;
 }
 
 #why-run .section-title h2 {
-margin: 0 0 10px;
-font-size: 32px;
-line-height: 1.2;
-font-weight: 700;
-color: #111;
+    margin: 0 0 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #111;
 }
 
 #why-run .section-title p {
-margin: 0;
-font-size: 17px;
-line-height: 1.6;
-color: #666;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #666;
 }
 
 /* =========================================================
-SIX-CARD 3 × 2 TABLE
-========================================================= */
+   SIX FEATURE CARDS — 3 × 2 TABLE
+   ========================================================= */
 
 #why-run .feature-grid {
-width: 100%;
-max-width: 1200px;
-margin: 0 auto;
-padding: 0;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
 
-display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
-align-items: stretch;
-gap: 0;
+    gap: 0;
+    align-items: stretch;
 
-border-top: 1px solid #e5e5e5;
-border-left: 1px solid #e5e5e5;
+    border-top: 1px solid #E5E5E5;
+    border-left: 1px solid #E5E5E5;
 
-box-sizing: border-box;
+    box-sizing: border-box;
 }
-
-/* =========================================================
-FEATURE CARDS
-========================================================= */
 
 #why-run .feature-card {
-width: 100%;
-min-width: 0;
-min-height: 430px;
+    width: 100%;
+    min-width: 0;
+    min-height: 480px;
 
-margin: 0;
-padding: 34px 30px;
+    margin: 0;
+    padding: 42px 30px;
 
-box-sizing: border-box;
+    box-sizing: border-box;
 
-display: flex;
-flex-direction: column;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-text-align: center;
+    text-align: center;
 
-background: #ffffff;
+    background: #FFFFFF;
 
-border-right: 1px solid #e5e5e5;
-border-bottom: 1px solid #e5e5e5;
+    border-right: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
 
-border-radius: 0;
-box-shadow: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Clean outside edges of the 3 × 2 table */
+
+#why-run .feature-card:nth-child(3n) {
+    border-right: none;
+}
+
+#why-run .feature-card:nth-child(n+4) {
+    border-bottom: none;
 }
 
 /* =========================================================
-FEATURE ICON
-========================================================= */
+   FEATURE ICON
+   ========================================================= */
 
 #why-run .feature-card .feature-icon {
-width: 100%;
-height: 42px;
+    width: 100%;
+    height: 48px;
 
-margin-bottom: 18px;
+    margin: 0 0 18px;
 
-display: flex;
-align-items: center;
-justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-font-size: 38px;
-line-height: 1;
+    font-size: 36px;
+    line-height: 1;
 }
 
 /* =========================================================
-FEATURE TITLE
-========================================================= */
+   FEATURE TITLE
+   ========================================================= */
 
-}
 #why-run .feature-card > h3 {
-width: 100%;
+    width: 100%;
 
-margin: 10 0 8px;
+    margin: 0 0 12px;
 
-font-size: 20px;
-line-height: 1.3;
-font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    line-height: 1.3;
+    font-weight: 700;
 
-color: #0E4C92;
+    color: #0E4C92;
 
-text-align: center;
+    text-align: center;
 }
 
 /* =========================================================
-FEATURE DESCRIPTION
-========================================================= */
+   FEATURE DESCRIPTION
+   ========================================================= */
 
 #why-run .feature-card > p {
-width: 100%;
-max-width: 330px;
-font-size: 15px;
-min-height: 52px;
+    width: 100%;
+    max-width: 390px;
 
-margin: 0 auto;
+    margin: 0 auto;
 
-line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
 
-color: #666;
+    color: #666;
 
-text-align: center;
+    min-height: 52px;
+
+    text-align: center;
 }
 
 /* =========================================================
-RACE OPTIONS — FIRST CARD
-========================================================= */
+   RACE CATEGORIES — FIRST CARD
+   ========================================================= */
 
 #why-run .race-feature .race-options {
-width: 100%;
-max-width: 100%;
+    width: 100%;
+    max-width: 430px;
 
-margin: 25px auto 0;
+    margin: 30px auto 0;
 
-display: grid;
-grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-border-top: 1px solid #eeeeee;
+    border-top: 1px solid #E5E5E5;
+    border-left: 1px solid #E5E5E5;
+
+    box-sizing: border-box;
 }
-
-/* Individual race item */
 
 #why-run .race-feature .race-option {
-min-height: 105px;
+    min-width: 0;
+    min-height: 130px;
 
-padding: 12px 8px;
+    padding: 15px 10px;
 
-box-sizing: border-box;
+    box-sizing: border-box;
 
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-text-align: center;
+    text-align: center;
 
-border-right: 1px solid #eeeeee;
-border-bottom: 1px solid #eeeeee;
+    border-right: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
 }
-
-/* Remove right border from every second item */
 
 #why-run .race-feature .race-option:nth-child(even) {
-border-right: none;
+    border-right: none;
 }
-
-/* Race icon */
 
 #why-run .race-feature .race-icon {
-font-size: 22px;
-line-height: 1;
+    font-size: 26px;
+    line-height: 1;
 
-margin-bottom: 6px;
+    margin-bottom: 7px;
+
+    flex-shrink: 0;
 }
 
-/* Race name + distance */
-
 #why-run .race-feature .race-details {
-display: flex;
-flex-direction: column;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 0;
 }
 
 #why-run .race-feature .race-details strong {
-font-size: 13px;
-line-height: 1.3;
+    display: block;
 
-color: #111;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 700;
+
+    color: #111;
 }
 
 #why-run .race-feature .race-details small {
-margin-top: 3px;
+    display: block;
 
-font-size: 11px;
-line-height: 1.3;
+    margin-top: 3px;
 
-color: #777;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    line-height: 1.3;
+
+    color: #777;
 }
 
-/* Register button */
-
 #why-run .race-feature .race-register {
-display: inline-block;
+    display: inline-block;
 
-margin-top: 8px;
-padding: 7px 12px;
+    margin-top: 11px;
+    padding: 8px 14px;
 
-background: #F7931E;
-color: #ffffff;
+    background: #F7931E;
+    color: #FFFFFF;
 
-border-radius: 20px;
+    border: none;
+    border-radius: 20px;
 
-font-size: 10px;
-font-weight: 700;
-line-height: 1.2;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    line-height: 1.2;
+    font-weight: 700;
 
-text-decoration: none;
-white-space: nowrap;
+    text-decoration: none;
+    white-space: nowrap;
 
-transition: .25s ease;
+    transition: .25s ease;
 }
 
 #why-run .race-feature .race-register:hover {
-background: #0E4C92;
-color: #ffffff;
-
-transform: translateY(-2px);
+    background: #0E4C92;
+    color: #FFFFFF;
+    transform: translateY(-2px);
 }
 
 /* =========================================================
-HIGHLIGHTS — OTHER FIVE CARDS
-========================================================= */
+   HIGHLIGHTS — OTHER FIVE CARDS
+   ========================================================= */
 
 #why-run .feature-card .feature-highlights {
-width: 100%;
-max-width: 360px;
+    width: 100%;
+    max-width: 430px;
 
-margin: 25px auto 0;
+    margin: 30px auto 0;
 
-border-top: 1px solid #eeeeee;
+    border-top: 1px solid #E5E5E5;
 }
 
-/* Individual highlight */
-
 #why-run .feature-card .feature-highlight {
-width: 100%;
-min-height: 65px;
+    width: 100%;
+    min-height: 78px;
 
-padding: 11px 5px;
+    padding: 14px 8px;
 
-box-sizing: border-box;
+    box-sizing: border-box;
 
-display: grid;
-grid-template-columns: 32px 1fr;
-grid-template-rows: auto auto;
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    grid-template-rows: auto auto;
 
-column-gap: 8px;
+    column-gap: 9px;
 
-text-align: left;
+    align-items: center;
 
-border-bottom: 1px solid #eeeeee;
+    text-align: left;
+
+    border-bottom: 1px solid #E5E5E5;
 }
 
 #why-run .feature-card .feature-highlight:last-child {
-border-bottom: none;
+    border-bottom: none;
 }
-
-/* Highlight icon */
 
 #why-run .feature-card .highlight-icon {
-grid-row: 1 / 3;
+    grid-row: 1 / 3;
 
-display: flex;
-align-items: center;
-justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-font-size: 20px;
+    font-size: 22px;
+    line-height: 1;
 }
-
-/* Highlight title */
 
 #why-run .feature-card .feature-highlight strong {
-display: block;
+    display: block;
 
-font-size: 13px;
-line-height: 1.3;
-font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 700;
 
-color: #111;
+    color: #111;
 }
-
-/* Highlight description */
 
 #why-run .feature-card .feature-highlight small {
-display: block;
+    display: block;
 
-margin-top: 2px;
+    margin-top: 3px;
 
-font-size: 12px;
-line-height: 1.4;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 400;
 
-color: #777;
+    color: #777;
 }
 
 /* =========================================================
-TABLET
-========================================================= */
+   TABLET
+   ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
-#why-run {
-padding: 65px 30px;
-}
+    #why-run {
+        padding: 65px 30px;
+    }
 
-#why-run .feature-grid {
-grid-template-columns: repeat(2, minmax(0, 1fr));
-}
+    #why-run .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
-#why-run .feature-card {
-min-height: 400px;
-padding: 32px 24px;
-}
+    #why-run .feature-card {
+        min-height: 450px;
+        padding: 38px 25px;
+    }
 
+    #why-run .feature-card:nth-child(3n) {
+        border-right: 1px solid #E5E5E5;
+    }
+
+    #why-run .feature-card:nth-child(2n) {
+        border-right: none;
+    }
+
+    #why-run .feature-card:nth-child(n+4) {
+        border-bottom: 1px solid #E5E5E5;
+    }
+
+    #why-run .feature-card:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
 }
 
 /* =========================================================
-MOBILE
-========================================================= */
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 700px) {
 
-#why-run {
-padding: 55px 18px;
-}
+    #why-run {
+        padding: 55px 18px;
+    }
 
-#why-run .section-title {
-margin-bottom: 30px;
-}
+    #why-run .section-title {
+        margin-bottom: 32px;
+    }
 
-#why-run .section-title h2 {
-font-size: 27px;
-}
+    #why-run .section-title h2 {
+        font-size: 28px;
+    }
 
-#why-run .section-title p {
-font-size: 15px;
-line-height: 1.5;
-}
+    #why-run .section-title p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
 
-#why-run .feature-grid {
-grid-template-columns: 1fr;
-}
+    #why-run .feature-grid {
+        grid-template-columns: 1fr;
+    }
 
-#why-run .feature-card {
-min-height: auto;
-padding: 32px 20px;
-}
+    #why-run .feature-card,
+    #why-run .feature-card:nth-child(2n),
+    #why-run .feature-card:nth-child(3n) {
+        min-height: auto;
 
-#why-run .feature-card > p {
-min-height: auto;
-}
+        padding: 36px 20px;
 
-#why-run .race-feature .race-options {
-grid-template-columns: repeat(2, minmax(0, 1fr));
-}
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid #E5E5E5;
+    }
 
-}
+    #why-run .feature-card:first-child {
+        border-top: none;
+    }
 
-/* =========================================================
-VERY SMALL MOBILE
-========================================================= */
+    #why-run .feature-card:last-child {
+        border-bottom: none;
+    }
 
-@media (max-width: 420px) {
+    #why-run .feature-card > h3 {
+        font-size: 21px;
+    }
 
-#why-run {
-padding: 45px 14px;
-}
+    #why-run .feature-card > p {
+        font-size: 15px;
+        min-height: auto;
+    }
 
-#why-run .feature-card {
-padding: 28px 16px;
-}
+    #why-run .feature-card .feature-highlights {
+        max-width: 100%;
+        margin-top: 25px;
+    }
 
-#why-run .race-feature .race-options {
-grid-template-columns: 1fr;
-}
+    #why-run .feature-card .feature-highlight {
+        min-height: 72px;
+    }
 
-#why-run .race-feature .race-option {
-min-height: 95px;
-border-right: none;
-}
+    #why-run .race-feature .race-options {
+        max-width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 25px;
+    }
 
-#why-run .feature-card .feature-highlights {
-max-width: 100%;
-}
-
-}
-
-.race-feature .race-option {
-min-height: 85px;
-
-box-sizing: border-box;
-
-padding: 10px 6px;
-
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-
-text-align: center;
-
-border-right: 1px solid #eeeeee;
-border-bottom: 1px solid #eeeeee;
-}
-
-.race-feature .race-icon {
-font-size: 21px;
-line-height: 1;
-
-margin-bottom: 5px;
-}
-
-.race-feature .race-details {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.race-feature .race-details strong {
-font-size: 12px;
-line-height: 1.3;
-
-color: #111;
-}
-
-.race-feature .race-details small {
-margin-top: 2px;
-
-font-size: 11px;
-
-color: #777;
-}
-
-.race-feature .race-register {
-display: inline-block;
-
-margin-top: 7px;
-
-padding: 6px 11px;
-
-background: #F7931E;
-color: #fff;
-
-border-radius: 18px;
-
-font-size: 10px;
-font-weight: 700;
-
-line-height: 1.2;
-
-text-decoration: none;
-
-white-space: nowrap;
-
-transition: .25s ease;
-}
-
-.race-feature .race-register:hover {
-background: #0E4C92;
-color: #fff;
+    #why-run .race-feature .race-option {
+        min-height: 120px;
+    }
 }
 
 /* =========================================================
-TABLET
-========================================================= */
+   VERY SMALL MOBILE
+   ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 480px) {
 
-.why-run-section {
-padding: 55px 20px;
-}
-
-.why-run-section .feature-grid {
-grid-template-columns: repeat(2, 1fr);
-}
-
-}
-
-/* ==========================================
-FINAL ALIGNMENT FIX — WHY RUN WITH US
-========================================== */
-
-#why-run {
-width: 100%;
-max-width: none;
-margin: 0;
-padding: 80px 8%;
-box-sizing: border-box;
-background: #F9FBFD;
-}
-
-#why-run .section-title {
-width: 100%;
-max-width: 1200px;
-margin: 0 auto 50px;
-text-align: left;
-}
-
-#why-run .feature-grid {
-width: 100%;
-max-width: 1400px;
-margin: 0 auto;
-padding: 0;
-display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
-gap: 0;
-box-sizing: border-box;
-align-items: stretch;
-}
-
-#why-run .feature-card {
-width: 100%;
-max-width: none;
-margin: 0;
-box-sizing: border-box;
-border-radius: 0;
-box-shadow: none;
-border-right: 1px solid #e5e5e5;
-border-bottom: 1px solid #e5e5e5;
-}
-
-/* Remove the right border from every third card */
-#why-run .feature-card:nth-child(3n) {
-border-right: none;
-}
-
-/* Make the cards form a clean 3 × 2 table */
-#why-run .feature-card:nth-child(-n+3) {
-border-top: 1px solid #e5e5e5;
-}
-
-#why-run .feature-card:nth-child(3n+1) {
-border-left: 1px solid #e5e5e5;
-}
-
-/* Keep the internal content centered */
-#why-run .feature-card {
-text-align: center;
-padding: 40px 30px;
-}
-
-/* Race options stay inside the first cell */
-#why-run .race-options {
-width: 100%;
-max-width: 100%;
-margin: 28px auto 0;
-}
-
-/* Highlight groups stay inside their respective cells */
-#why-run .feature-highlights {
-width: 100%;
-max-width: 100%;
-margin: 26px auto 0;
-}
-
-/* ==========================================
-MOBILE
-========================================== */
-
-@media (max-width: 800px) {
-
-#why-run {
-padding: 60px 20px;
-}
-
-#why-run .section-title {
-margin-bottom: 35px;
-text-align: left;
-}
-
-#why-run .feature-grid {
-grid-template-columns: 1fr;
-width: 100%;
-}
-
-#why-run .feature-card {
-border-left: 1px solid #e5e5e5;
-border-right: 1px solid #e5e5e5;
-border-top: none;
-}
-
-#why-run .feature-card:first-child {
-border-top: 1px solid #e5e5e5;
-}
-
-#why-run .feature-card:nth-child(3n) {
-border-right: 1px solid #e5e5e5;
-}
-
-#why-run .race-options {
-grid-template-columns: repeat(2, 1fr);
-}
-}
-
-/* =========================================================
-MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-.why-run-section {
-padding: 45px 16px;
-}
-
-.why-run-section .section-title {
-margin-bottom: 30px;
-}
-
-.why-run-section .section-title h2 {
-font-size: 26px;
-}
-
-.why-run-section .section-title p {
-font-size: 15px;
-}
-
-.why-run-section .feature-grid {
-grid-template-columns: 1fr;
-}
-
-.why-run-section .feature-card {
-min-height: auto;
-padding: 30px 20px;
-}
-
-.why-run-section .feature-card > p {
-min-height: auto;
-}
-
-.feature-highlights {
-max-width: 100%;
-}
-
-.race-feature .race-options {
-max-width: 100%;
-}
-
-}
-
-/* =========================================================
-VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 380px) {
-
-.race-feature .race-options {
-grid-template-columns: 1fr;
-}
-
-}
-/* =========================================
-SCENIC IIT HYDERABAD CAMPUS
-========================================= */
-
-.feature-card .feature-highlight {
-padding: 16px 12px;
-text-align: center;
-border-right: 1px solid #e5e5e5;
-}
-
-.feature-card .feature-highlight:last-child {
-border-right: none;
-}
+    #why-run {
+        padding: 45px 14px;
+    }
 
-.feature-card .highlight-icon {
-font-size: 24px;
-line-height: 1;
-margin-bottom: 8px;
-}
-
-.feature-card .feature-highlight h3 {
-margin: 0 0 5px;
-font-size: 14px;
-font-weight: 700;
-color: #111;
-}
-
-.feature-card .feature-highlight span {
-display: block;
-font-size: 12px;
-line-height: 1.4;
-color: #666;
-}
-
-/* Mobile */
-
-/* ==========================================
-RACE OPTIONS – WHY RUN WITH US
-========================================== */
-/* ==========================================
-RACE OPTIONS – FOUR CENTERED RACES
-========================================== */
-
-.race-option {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: flex-start;
-gap: 7px;
-padding: 18px 12px;
-text-align: center;
-border-bottom: 1px solid #eeeeee;
-border-right: 1px solid #eeeeee;
-min-width: 0;
-}
-
-.race-option:last-child {
-border-right: none;
-}
-
-.race-icon {
-font-size: 24px;
-line-height: 1;
-flex-shrink: 0;
-}
-
-.race-details {
-display: flex;
-flex-direction: column;
-align-items: center;
-min-width: 0;
-}
-
-.race-option strong {
-display: block;
-font-family: 'Montserrat', sans-serif;
-font-size: 14px;
-font-weight: 700;
-color: #111;
-line-height: 1.3;
-}
-
-.race-option small {
-display: block;
-margin-top: 3px;
-font-size: 12px;
-color: #666;
-}
-
-/* REGISTER BUTTON */
-
-.race-register {
-display: inline-block;
-margin-top: 5px;
-padding: 7px 12px;
-background: #F7931E;
-color: #ffffff;
-border-radius: 20px;
-font-size: 11px;
-font-weight: 700;
-text-decoration: none;
-white-space: nowrap;
-transition: .3s ease;
-}
-
-.race-register:hover {
-background: #0E4C92;
-color: #ffffff;
-transform: translateY(-2px);
-}
-
-/* PROFESSIONAL TIMING HIGHLIGHTS */
-
-.feature-card .race-options {
-grid-template-columns: 1fr;
-width: 750px;
-max-width: 100%;
-margin: 28px auto 0;
-}
-
-.feature-card .race-option {
-text-align: left;
-padding: 14px 8px;
-}
-
-.feature-card .race-option:nth-child(odd) {
-border-right: none;
-}
-
-.feature-card .race-option strong {
-font-size: 13px;
-}
-
-.feature-card .race-option small {
-font-size: 12px;
-color: #666;
-}
-
-/* ==========================================
-MOBILE
-========================================== */
-
-@media (max-width: 700px) {
+    #why-run .feature-card {
+        padding: 32px 16px;
+    }
 
-.race-options {
-grid-template-columns: repeat(2, 1fr);
-width: 100%;
-}
-
-.race-option {
-padding: 15px 8px;
-}
-
-.race-option:nth-child(2) {
-border-right: none;
-}
-
-.race-option:nth-child(4) {
-border-right: none;
-}
-
-.race-icon {
-font-size: 22px;
-}
-
-.race-option strong {
-font-size: 13px;
-}
-
-.race-register {
-padding: 7px 10px;
-font-size: 10px;
-}
-}
-
-@media (max-width: 420px) {
-
-.race-options {
-grid-template-columns: 1fr;
-}
-
-.race-option {
-border-right: none;
-padding: 14px 8px;
-}
+    #why-run .feature-card .feature-icon {
+        font-size: 32px;
+    }
 
-}
-
-/* REGISTER BUTTON */
-
-.race-register {
-display: inline-block;
-flex-shrink: 0;
-padding: 7px 11px;
-background: #F7931E;
-color: #ffffff;
-border-radius: 20px;
-font-size: 11px;
-font-weight: 700;
-text-decoration: none;
-white-space: nowrap;
-transition: .3s ease;
-}
-
-.race-register:hover {
-background: #0E4C92;
-color: #ffffff;
-transform: translateY(-2px);
-}
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-.race-options {
-grid-template-columns: 1fr;
-}
-
-.race-option:nth-child(odd) {
-border-right: none;
-}
-
-.race-option {
-padding: 13px 8px;
-}
+    #why-run .feature-card > h3 {
+        font-size: 20px;
+    }
 
-.race-register {
-padding: 7px 10px;
-font-size: 10px;
-}
+    #why-run .feature-card > p {
+        font-size: 14px;
+    }
 
-}
+    #why-run .race-feature .race-options {
+        grid-template-columns: 1fr;
+    }
 
-/* Mobile */
-@media (max-width: 600px) {
+    #why-run .race-feature .race-option {
+        min-height: 105px;
+        border-right: none;
+    }
 
-.race-options {
-grid-template-columns: 1fr;
-}
+    #why-run .feature-card .feature-highlight strong {
+        font-size: 13px;
+    }
 
-.race-option:nth-child(odd) {
-border-right: none;
+    #why-run .feature-card .feature-highlight small {
+        font-size: 12px;
+    }
 }
 
-.race-option {
-padding: 13px 8px;
-}
 
-}
 /*=========================
 RACE CATEGORIES
 ==========================*/
