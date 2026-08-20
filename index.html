@@ -531,83 +531,481 @@ letter-spacing:1px;
 
 } 
 
-/*======================================
-WHY RUN
-=======================================*/
+/* =========================================================
+   WHY RUN WITH US
+   Six-feature 3 × 2 table-style layout
+   ========================================================= */
 
-.why-run-section{
+.why-run-section {
+    width: 100%;
+    box-sizing: border-box;
+}
 
-padding:100px 8%;
 
-background:#F9FBFD;
+/* =========================================================
+   MAIN 3 × 2 GRID
+   ========================================================= */
+
+.why-run-section .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 45px auto 0;
+
+    border-top: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
+}
+
+
+/* =========================================================
+   INDIVIDUAL FEATURE
+   ========================================================= */
+
+.why-run-section .feature-card {
+
+    box-sizing: border-box;
+
+    width: 100%;
+
+    min-height: 390px;
+
+    padding: 32px 28px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================================
+   FEATURE ICON
+   ========================================================= */
+
+.why-run-section .feature-icon {
+
+    font-size: 38px;
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   FEATURE TITLE
+   ========================================================= */
+
+.why-run-section .feature-card > h3 {
+
+    margin: 0 0 12px;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    color: #0E4C92;
+}
+
+
+/* =========================================================
+   FEATURE DESCRIPTION
+   ========================================================= */
+
+.why-run-section .feature-card > p {
+
+    width: 100%;
+
+    max-width: 330px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   HIGHLIGHT AREA
+   ========================================================= */
+
+.feature-highlights {
+
+    width: 100%;
+
+    max-width: 380px;
+
+    margin: 25px auto 0;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+/* =========================================================
+   INDIVIDUAL HIGHLIGHT
+   ========================================================= */
+
+.feature-highlight {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 8px;
+
+    display: grid;
+
+    grid-template-columns: 32px 1fr;
+
+    grid-template-rows: auto auto;
+
+    column-gap: 8px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* Remove last divider */
+
+.feature-highlight:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   HIGHLIGHT ICON
+   ========================================================= */
+
+.highlight-icon {
+
+    grid-row: 1 / 3;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   HIGHLIGHT TITLE
+   ========================================================= */
+
+.feature-highlight strong {
+
+    display: block;
+
+    font-size: 14px;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   HIGHLIGHT DESCRIPTION
+   ========================================================= */
+
+.feature-highlight small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   RACE CATEGORY TABLE
+   ========================================================= */
+
+.race-feature {
+
+    grid-column: span 1;
+}
+
+
+/* Four races inside first cell */
+
+.race-feature .race-options {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 25px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid #eeeeee;
+
+    border-left: 1px solid #eeeeee;
+}
+
+
+/* Individual race */
+
+.race-feature .race-option {
+
+    box-sizing: border-box;
+
+    min-width: 0;
+
+    padding: 12px 7px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    text-align: center;
+
+    border-right: 1px solid #eeeeee;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* Race icon */
+
+.race-feature .race-icon {
+
+    font-size: 21px;
+
+    line-height: 1;
+
+    margin-bottom: 6px;
+}
+
+
+/* Race details */
+
+.race-feature .race-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* Race name */
+
+.race-feature .race-details strong {
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+    color: #111;
+}
+
+
+/* Race distance */
+
+.race-feature .race-details small {
+
+    margin-top: 2px;
+
+    font-size: 11px;
+
+    color: #777;
+}
+
+
+/* Register button */
+
+.race-feature .race-register {
+
+    display: inline-block;
+
+    margin-top: 8px;
+
+    padding: 6px 10px;
+
+    background: #F7931E;
+
+    color: #ffffff;
+
+    border-radius: 18px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: .25s ease;
+}
+
+
+.race-feature .race-register:hover {
+
+    background: #0E4C92;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .why-run-section .feature-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        max-width: 100%;
+    }
 
 }
 
-.feature-grid{
 
-display:grid;
+@media (max-width: 600px) {
 
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    .why-run-section .feature-grid {
 
-gap:35px;
+        grid-template-columns: 1fr;
 
-margin-top:60px;
+        width: 100%;
+
+        margin-top: 30px;
+    }
+
+
+    .why-run-section .feature-card {
+
+        min-height: auto;
+
+        padding: 28px 20px;
+    }
+
+
+    .why-run-section .feature-icon {
+
+        font-size: 34px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .why-run-section .feature-card > h3 {
+
+        font-size: 19px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .why-run-section .feature-card > p {
+
+        font-size: 14px;
+
+        max-width: 500px;
+    }
+
+
+    .feature-highlights {
+
+        max-width: 100%;
+
+        margin-top: 22px;
+    }
+
+
+    .feature-highlight {
+
+        padding: 13px 5px;
+    }
+
+
+    .feature-highlight strong {
+
+        font-size: 14px;
+    }
+
+
+    .feature-highlight small {
+
+        font-size: 12px;
+    }
+
+
+    /* Race categories remain compact on mobile */
+
+    .race-feature .race-options {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        width: 100%;
+    }
+
+
+    .race-feature .race-option {
+
+        padding: 12px 5px;
+    }
 
 }
 
-.feature-card{
 
-background:white;
+@media (max-width: 380px) {
 
-padding:40px 30px;
+    .race-feature .race-options {
 
-border-radius:20px;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-transition:.35s;
-
-text-align:center;
+        grid-template-columns: 1fr;
+    }
 
 }
-
-.feature-card:hover{
-
-transform:translateY(-12px);
-
-box-shadow:0 20px 45px rgba(247,147,30,.18);
-
-}
-
-.feature-icon{
-
-font-size:55px;
-
-margin-bottom:20px;
-
-}
-
-.feature-card h3{
-
-font-family:'Montserrat',sans-serif;
-
-margin-bottom:15px;
-
-font-size:24px;
-
-color:#111;
-
-}
-
-.feature-card p{
-
-color:#666;
-
-line-height:1.7;
-
-font-size:16px;
-
-}
+ 
  /* =========================================
    SCENIC IIT HYDERABAD CAMPUS
    ========================================= */
@@ -2636,211 +3034,307 @@ running event.
 
 </section> 
 
+<section id="why-run" class="why-run-section">
 
-
-<section id="why-run"
-class="why-run-section hidden">
-
-<div class="section-title">
-
-<h2>Why Run With Us?</h2>
-
-<p>Experience one of India's most beautiful university campus runs.</p>
-
-</div>
-
-<div class="feature-grid">
-
-<div class="feature-card">
-
-    <div class="feature-icon">🏃</div>
-
-    <h3>A Race for Every Runner</h3>
-
-    <p>
-        Whether you're a beginner or an experienced runner, there's a race for everyone.
-    </p>
-
-  <div class="race-options">
-
-    <div class="race-option">
-        <span class="race-icon">🏅</span>
-
-        <span class="race-details">
-            <strong>Half Marathon</strong>
-            <small>21.1K</small>
-        </span>
-
-        <a href="https://ifinish.in/running/IITHHM_2026"
-           target="_blank"
-           class="race-register">
-            Register Now
-        </a>
+    <div class="section-title">
+        <h2>Why Run With Us?</h2>
+        <p>Experience one of India's most beautiful university campus runs.</p>
     </div>
 
 
-    <div class="race-option">
-        <span class="race-icon">🏃</span>
-
-        <span class="race-details">
-            <strong>10K Run</strong>
-        </span>
-
-        <a href="https://ifinish.in/running/IITHHM_2026"
-           target="_blank"
-           class="race-register">
-            Register Now
-        </a>
-    </div>
+    <div class="feature-grid">
 
 
-    <div class="race-option">
-        <span class="race-icon">⏱️</span>
+        <!-- =================================================
+             1. RACE CATEGORIES
+             ================================================= -->
 
-        <span class="race-details">
-            <strong>5K Timed Run</strong>
-        </span>
+        <div class="feature-card race-feature">
 
-        <a href="https://ifinish.in/running/IITHHM_2026"
-           target="_blank"
-           class="race-register">
-            Register Now
-        </a>
-    </div>
+            <div class="feature-icon">🏃</div>
+
+            <h3>A Race for Every Runner</h3>
+
+            <p>
+                Whether you're a beginner or an experienced runner, there's a race for everyone.
+            </p>
+
+            <div class="race-options">
+
+                <div class="race-option">
+
+                    <span class="race-icon">🏅</span>
+
+                    <span class="race-details">
+                        <strong>Half Marathon</strong>
+                        <small>21.1K</small>
+                    </span>
+
+                    <a href="https://ifinish.in/running/IITHHM_2026"
+                       target="_blank"
+                       class="race-register">
+                        Register Now
+                    </a>
+
+                </div>
 
 
-    <div class="race-option">
-        <span class="race-icon">👨‍👩‍👧‍👦</span>
+                <div class="race-option">
 
-        <span class="race-details">
-            <strong>5K Fun Run</strong>
-        </span>
+                    <span class="race-icon">🏃</span>
 
-        <a href="https://ifinish.in/running/IITHHM_2026"
-           target="_blank"
-           class="race-register">
-            Register Now
-        </a>
-    </div>
+                    <span class="race-details">
+                        <strong>10K Run</strong>
+                        <small>10K</small>
+                    </span>
 
-</div>
-    </div>
+                    <a href="https://ifinish.in/running/IITHHM_2026"
+                       target="_blank"
+                       class="race-register">
+                        Register Now
+                    </a>
 
-</div>
-<div class="feature-card">
+                </div>
 
-    <div class="feature-icon">🏅</div>
 
-    <h3>Professional Timing</h3>
+                <div class="race-option">
 
-    <p>
-        RFID-based timing system with accurate race results and finisher certificates.
-    </p>
+                    <span class="race-icon">⏱️</span>
 
-    <div class="race-options">
+                    <span class="race-details">
+                        <strong>5K Timed Run</strong>
+                        <small>5K</small>
+                    </span>
 
-        <div class="race-option">
-            <span class="race-icon">📡</span>
+                    <a href="https://ifinish.in/running/IITHHM_2026"
+                       target="_blank"
+                       class="race-register">
+                        Register Now
+                    </a>
 
-            <span class="race-details">
-                <strong>RFID Timing</strong>
-                <small>Fast & reliable timing</small>
-            </span>
+                </div>
+
+
+                <div class="race-option">
+
+                    <span class="race-icon">👨‍👩‍👧‍👦</span>
+
+                    <span class="race-details">
+                        <strong>5K Fun Run</strong>
+                        <small>5K</small>
+                    </span>
+
+                    <a href="https://ifinish.in/running/IITHHM_2026"
+                       target="_blank"
+                       class="race-register">
+                        Register Now
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="race-option">
-            <span class="race-icon">⏱️</span>
 
-            <span class="race-details">
-                <strong>Accurate Results</strong>
-                <small>Precise race timing</small>
-            </span>
+        <!-- =================================================
+             2. PROFESSIONAL TIMING
+             ================================================= -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🏅</div>
+
+            <h3>Professional Timing</h3>
+
+            <p>
+                RFID-based timing system with accurate race results and finisher certificates.
+            </p>
+
+            <div class="feature-highlights">
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">📡</span>
+                    <strong>RFID Timing</strong>
+                    <small>Fast &amp; reliable timing</small>
+                </div>
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">⏱️</span>
+                    <strong>Accurate Results</strong>
+                    <small>Precise race timing</small>
+                </div>
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">📜</span>
+                    <strong>Finisher Certificate</strong>
+                    <small>Digital certificate for every finisher</small>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="race-option">
-            <span class="race-icon">📜</span>
 
-            <span class="race-details">
-                <strong>Finisher Certificate</strong>
-                <small>Digital certificate for every finisher</small>
-            </span>
+        <!-- =================================================
+             3. SCENIC CAMPUS
+             ================================================= -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🌳</div>
+
+            <h3>Scenic IIT Hyderabad Campus</h3>
+
+            <p>
+                Run through one of India's most beautiful green campuses with modern architecture.
+            </p>
+
+            <div class="feature-highlights">
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">🌿</span>
+                    <strong>Green Campus</strong>
+                    <small>Lush and refreshing surroundings</small>
+                </div>
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">🏛️</span>
+                    <strong>Modern Architecture</strong>
+                    <small>Beautiful contemporary campus</small>
+                </div>
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">🏃</span>
+                    <strong>Scenic Route</strong>
+                    <small>A refreshing campus running experience</small>
+                </div>
+
+            </div>
+
         </div>
+
+
+        <!-- =================================================
+             4. MEDICAL & HYDRATION
+             ================================================= -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">❤️</div>
+
+            <h3>Medical &amp; Hydration Support</h3>
+
+            <p>
+                Well-equipped hydration stations and medical support available throughout the race.
+            </p>
+
+            <div class="feature-highlights">
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">🥤</span>
+                    <strong>Hydration Stations</strong>
+                    <small>Refreshment points along the route</small>
+                </div>
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">🚑</span>
+                    <strong>Medical Support</strong>
+                    <small>Medical assistance available during the race</small>
+                </div>
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">🛡️</span>
+                    <strong>Runner Safety</strong>
+                    <small>Support throughout your running journey</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             5. FINISHER MEDAL
+             ================================================= -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🎖️</div>
+
+            <h3>Finisher Medal</h3>
+
+            <p>
+                Every finisher receives a beautifully designed commemorative medal.
+            </p>
+
+            <div class="feature-highlights">
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">🏅</span>
+                    <strong>Official Medal</strong>
+                    <small>A special memento of your achievement</small>
+                </div>
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">🎨</span>
+                    <strong>Beautiful Design</strong>
+                    <small>Designed especially for the event</small>
+                </div>
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">🏆</span>
+                    <strong>Celebrate Your Finish</strong>
+                    <small>Take home your race-day achievement</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             6. COMMUNITY EXPERIENCE
+             ================================================= -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">👨‍👩‍👧‍👦</div>
+
+            <h3>Community Experience</h3>
+
+            <p>
+                Join students, faculty, alumni and runners from across India.
+            </p>
+
+            <div class="feature-highlights">
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">🎓</span>
+                    <strong>IIT Hyderabad Community</strong>
+                    <small>Students, faculty and alumni</small>
+                </div>
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">🏃</span>
+                    <strong>Runners Across India</strong>
+                    <small>Connect with runners from different places</small>
+                </div>
+
+                <div class="feature-highlight">
+                    <span class="highlight-icon">🤝</span>
+                    <strong>Run Together</strong>
+                    <small>Celebrate the spirit of community</small>
+                </div>
+
+            </div>
+
+        </div>
+
 
     </div>
 
-</div>
-
-<div class="feature-card">
-    <div class="feature-icon">🌳</div>
-
-    <h2>Scenic IIT Hyderabad Campus</h2>
-
-    <p>
-        Run through one of India's most beautiful green campuses with modern architecture.
-    </p>
-
-    <div class="feature-highlights">
-
-        <div class="feature-highlight">
-            <div class="highlight-icon">🌿</div>
-            <h3>Green Campus</h3>
-            <span>Lush and refreshing surroundings</span>
-        </div>
-
-        <div class="feature-highlight">
-            <div class="highlight-icon">🏛️</div>
-            <h3>Modern Architecture</h3>
-            <span>Beautiful contemporary campus</span>
-        </div>
-
-        <div class="feature-highlight">
-            <div class="highlight-icon">🏃</div>
-            <h3>Scenic Route</h3>
-            <span>A refreshing campus running experience</span>
-        </div>
-
-    </div>
-</div>
-
-<div class="feature-card">
-
-<div class="feature-icon">❤️</div>
-
-<h3>Medical & Hydration Support</h3>
-
-<p>
-Well-equipped hydration stations and medical support available throughout the race.
-</p>
-
-</div>
-
-<div class="feature-card">
-
-<div class="feature-icon">🎖️</div>
-
-<h3>Finisher Medal</h3>
-
-<p>
-Every finisher receives a beautifully designed commemorative medal.
-</p>
-
-</div>
-
-<div class="feature-card">
-
-<div class="feature-icon">👨‍👩‍👧‍👦</div>
-
-<h3>Community Experience</h3>
-
-<p>
-Join students, faculty, alumni and runners from across India.
-</p>
-
-</div>
-
-</div>
-
-</section>  
+</section>
 
 <section id="categories"
 class="categories hidden">
