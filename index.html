@@ -757,19 +757,117 @@ letter-spacing:1px;
    RACE CATEGORIES
    ========================================================= */
 
-.race-feature .race-options {
-    width: 100%;
-    max-width: 360px;
+/* =========================================================
+   FINAL WHY RUN WITH US — CLEAN OVERRIDES
+   Keep this block LAST
+   ========================================================= */
 
-    margin: 25px auto 0;
-
+#why-run .feature-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    border-top: 1px solid #eeeeee;
-    border-left: 1px solid #eeeeee;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    gap: 0;
+    align-items: stretch;
 }
 
+#why-run .feature-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 430px;
+    margin: 0;
+    padding: 40px 30px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    background: #fff;
+    border-radius: 0;
+    border-top: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: none;
+}
+
+/* Left edge */
+#why-run .feature-card:nth-child(3n + 1) {
+    border-left: 1px solid #e5e5e5;
+}
+
+/* Right edge */
+#why-run .feature-card:nth-child(3n) {
+    border-right: 1px solid #e5e5e5;
+}
+
+/* Race options stay inside first card */
+#why-run .race-feature .race-options {
+    width: 100%;
+    max-width: 100%;
+    margin: 28px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Highlight groups */
+#why-run .feature-highlights {
+    width: 100%;
+    max-width: 100%;
+    margin: 26px auto 0;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    #why-run .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    #why-run .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #why-run .feature-card {
+        min-height: auto;
+        padding: 32px 20px;
+        border-left: 1px solid #e5e5e5;
+        border-right: 1px solid #e5e5e5;
+    }
+
+    #why-run .race-feature .race-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    #why-run .race-feature .race-options {
+        grid-template-columns: 1fr;
+    }
+
+}
 
 .race-feature .race-option {
     min-height: 85px;
@@ -1048,18 +1146,7 @@ letter-spacing:1px;
    SCENIC IIT HYDERABAD CAMPUS
    ========================================= */
 
-.feature-card {
-    text-align: center;
-}
 
-.feature-card .feature-highlights {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 670px;
-    margin: 26px auto 0;
-    border-top: 1px solid #e5e5e5;
-    border-bottom: 1px solid #e5e5e5;
-}
 
 .feature-card .feature-highlight {
     padding: 16px 12px;
@@ -1092,23 +1179,7 @@ letter-spacing:1px;
 }
 
 /* Mobile */
-@media (max-width: 700px) {
 
-    .feature-card .feature-highlights {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-    }
-
-    .feature-card .feature-highlight {
-        border-right: none;
-        border-bottom: 1px solid #e5e5e5;
-        padding: 14px 10px;
-    }
-
-    .feature-card .feature-highlight:last-child {
-        border-bottom: none;
-    }
-}
 
  /* ==========================================
    RACE OPTIONS – WHY RUN WITH US
@@ -1117,14 +1188,7 @@ letter-spacing:1px;
    RACE OPTIONS – FOUR CENTERED RACES
    ========================================== */
 
-.race-options {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: 100%;
-    max-width: 900px;
-    margin: 28px auto 0;
-    border-top: 1px solid #eeeeee;
-}
+
 
 .race-option {
     display: flex;
@@ -2581,17 +2645,7 @@ transition:.3s;
 
 }
 
-.feature-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.feature-card{
-
-padding:30px;
-
-}  
+ 
 
 .nav-register:hover{
 
