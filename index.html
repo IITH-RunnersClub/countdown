@@ -608,6 +608,71 @@ line-height:1.7;
 font-size:16px;
 
 }
+ /* =========================================
+   SCENIC IIT HYDERABAD CAMPUS
+   ========================================= */
+
+.feature-card {
+    text-align: center;
+}
+
+.feature-card .feature-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 670px;
+    margin: 26px auto 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.feature-card .feature-highlight {
+    padding: 16px 12px;
+    text-align: center;
+    border-right: 1px solid #e5e5e5;
+}
+
+.feature-card .feature-highlight:last-child {
+    border-right: none;
+}
+
+.feature-card .highlight-icon {
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.feature-card .feature-highlight h3 {
+    margin: 0 0 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+}
+
+.feature-card .feature-highlight span {
+    display: block;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #666;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .feature-card .feature-highlights {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .feature-card .feature-highlight {
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 14px 10px;
+    }
+
+    .feature-card .feature-highlight:last-child {
+        border-bottom: none;
+    }
+}
 
  /* ==========================================
    RACE OPTIONS – WHY RUN WITH US
@@ -2706,15 +2771,35 @@ class="why-run-section hidden">
 </div>
 
 <div class="feature-card">
+    <div class="feature-icon">🌳</div>
 
-<div class="feature-icon">🌳</div>
+    <h2>Scenic IIT Hyderabad Campus</h2>
 
-<h3>Scenic IIT Hyderabad Campus</h3>
+    <p>
+        Run through one of India's most beautiful green campuses with modern architecture.
+    </p>
 
-<p>
-Run through one of India's most beautiful green campuses with modern architecture.
-</p>
+    <div class="feature-highlights">
 
+        <div class="feature-highlight">
+            <div class="highlight-icon">🌿</div>
+            <h3>Green Campus</h3>
+            <span>Lush and refreshing surroundings</span>
+        </div>
+
+        <div class="feature-highlight">
+            <div class="highlight-icon">🏛️</div>
+            <h3>Modern Architecture</h3>
+            <span>Beautiful contemporary campus</span>
+        </div>
+
+        <div class="feature-highlight">
+            <div class="highlight-icon">🏃</div>
+            <h3>Scenic Route</h3>
+            <span>A refreshing campus running experience</span>
+        </div>
+
+    </div>
 </div>
 
 <div class="feature-card">
