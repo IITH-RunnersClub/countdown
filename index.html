@@ -693,6 +693,32 @@ font-size:16px;
     transform: translateY(-2px);
 }
 
+ /* PROFESSIONAL TIMING HIGHLIGHTS */
+
+.feature-card .race-options {
+    grid-template-columns: 1fr;
+    width: 750px;
+    max-width: 100%;
+    margin: 28px auto 0;
+}
+
+.feature-card .race-option {
+    text-align: left;
+    padding: 14px 8px;
+}
+
+.feature-card .race-option:nth-child(odd) {
+    border-right: none;
+}
+
+.feature-card .race-option strong {
+    font-size: 13px;
+}
+
+.feature-card .race-option small {
+    font-size: 12px;
+    color: #666;
+}
 
 /* ==========================================
    MOBILE
@@ -2638,13 +2664,44 @@ class="why-run-section hidden">
 </div>
 <div class="feature-card">
 
-<div class="feature-icon">🏅</div>
+    <div class="feature-icon">🏅</div>
 
-<h3>Professional Timing</h3>
+    <h3>Professional Timing</h3>
 
-<p>
-RFID-based timing system with accurate race results and finisher certificates.
-</p>
+    <p>
+        RFID-based timing system with accurate race results and finisher certificates.
+    </p>
+
+    <div class="race-options">
+
+        <div class="race-option">
+            <span class="race-icon">📡</span>
+
+            <span class="race-details">
+                <strong>RFID Timing</strong>
+                <small>Fast & reliable timing</small>
+            </span>
+        </div>
+
+        <div class="race-option">
+            <span class="race-icon">⏱️</span>
+
+            <span class="race-details">
+                <strong>Accurate Results</strong>
+                <small>Precise race timing</small>
+            </span>
+        </div>
+
+        <div class="race-option">
+            <span class="race-icon">📜</span>
+
+            <span class="race-details">
+                <strong>Finisher Certificate</strong>
+                <small>Digital certificate for every finisher</small>
+            </span>
+        </div>
+
+    </div>
 
 </div>
 
