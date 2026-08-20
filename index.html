@@ -532,35 +532,34 @@ letter-spacing:1px;
 } 
 
 /* =========================================================
-   WHY RUN WITH US - FINAL ALIGNMENT
+   WHY RUN WITH US — FINAL CLEAN CSS
+   Single source of truth for all six feature cards
    ========================================================= */
 
-.why-run-section {
+#why-run {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 70px 24px;
+    margin: 0;
+    padding: 80px 8%;
     box-sizing: border-box;
+    background: #F9FBFD;
 }
 
-
-/* Section heading */
-
-.why-run-section .section-title {
+#why-run .section-title {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto 40px;
+    margin: 0 auto 45px;
     text-align: left;
 }
 
-.why-run-section .section-title h2 {
+#why-run .section-title h2 {
     margin: 0 0 10px;
     font-size: 32px;
     line-height: 1.2;
     font-weight: 700;
+    color: #111;
 }
 
-.why-run-section .section-title p {
+#why-run .section-title p {
     margin: 0;
     font-size: 17px;
     line-height: 1.6;
@@ -569,33 +568,41 @@ letter-spacing:1px;
 
 
 /* =========================================================
-   3 × 2 FEATURE TABLE
+   SIX-CARD 3 × 2 TABLE
    ========================================================= */
 
-.why-run-section .feature-grid {
+#why-run .feature-grid {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    align-items: stretch;
+    gap: 0;
 
     border-top: 1px solid #e5e5e5;
     border-left: 1px solid #e5e5e5;
+
+    box-sizing: border-box;
 }
 
 
 /* =========================================================
-   FEATURE CARD
+   FEATURE CARDS
    ========================================================= */
 
-.why-run-section .feature-card {
+#why-run .feature-card {
     width: 100%;
+    min-width: 0;
     min-height: 430px;
 
-    box-sizing: border-box;
-
+    margin: 0;
     padding: 34px 30px;
+
+    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
@@ -603,24 +610,22 @@ letter-spacing:1px;
 
     text-align: center;
 
-    background: #fff;
+    background: #ffffff;
 
     border-right: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
 
-    box-shadow: none;
     border-radius: 0;
+    box-shadow: none;
 }
 
 
 /* =========================================================
-   ICON
+   FEATURE ICON
    ========================================================= */
 
-.why-run-section .feature-icon {
-    font-size: 38px;
-    line-height: 1;
-
+#why-run .feature-card .feature-icon {
+    width: 100%;
     height: 42px;
 
     margin-bottom: 18px;
@@ -628,14 +633,17 @@ letter-spacing:1px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    font-size: 38px;
+    line-height: 1;
 }
 
 
 /* =========================================================
-   TITLE
+   FEATURE TITLE
    ========================================================= */
 
-.why-run-section .feature-card > h3 {
+#why-run .feature-card > h3 {
     width: 100%;
 
     margin: 0 0 12px;
@@ -651,10 +659,10 @@ letter-spacing:1px;
 
 
 /* =========================================================
-   DESCRIPTION
+   FEATURE DESCRIPTION
    ========================================================= */
 
-.why-run-section .feature-card > p {
+#why-run .feature-card > p {
     width: 100%;
     max-width: 330px;
 
@@ -672,10 +680,121 @@ letter-spacing:1px;
 
 
 /* =========================================================
-   HIGHLIGHTS
+   RACE OPTIONS — FIRST CARD
    ========================================================= */
 
-.feature-highlights {
+#why-run .race-feature .race-options {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 25px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+/* Individual race item */
+
+#why-run .race-feature .race-option {
+    min-height: 105px;
+
+    padding: 12px 8px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* Remove right border from every second item */
+
+#why-run .race-feature .race-option:nth-child(even) {
+    border-right: none;
+}
+
+
+/* Race icon */
+
+#why-run .race-feature .race-icon {
+    font-size: 22px;
+    line-height: 1;
+
+    margin-bottom: 6px;
+}
+
+
+/* Race name + distance */
+
+#why-run .race-feature .race-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#why-run .race-feature .race-details strong {
+    font-size: 13px;
+    line-height: 1.3;
+
+    color: #111;
+}
+
+#why-run .race-feature .race-details small {
+    margin-top: 3px;
+
+    font-size: 11px;
+    line-height: 1.3;
+
+    color: #777;
+}
+
+
+/* Register button */
+
+#why-run .race-feature .race-register {
+    display: inline-block;
+
+    margin-top: 8px;
+    padding: 7px 12px;
+
+    background: #F7931E;
+    color: #ffffff;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: .25s ease;
+}
+
+#why-run .race-feature .race-register:hover {
+    background: #0E4C92;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HIGHLIGHTS — OTHER FIVE CARDS
+   ========================================================= */
+
+#why-run .feature-card .feature-highlights {
     width: 100%;
     max-width: 360px;
 
@@ -687,16 +806,15 @@ letter-spacing:1px;
 
 /* Individual highlight */
 
-.feature-highlight {
+#why-run .feature-card .feature-highlight {
     width: 100%;
     min-height: 65px;
 
-    box-sizing: border-box;
-
     padding: 11px 5px;
 
-    display: grid;
+    box-sizing: border-box;
 
+    display: grid;
     grid-template-columns: 32px 1fr;
     grid-template-rows: auto auto;
 
@@ -707,14 +825,14 @@ letter-spacing:1px;
     border-bottom: 1px solid #eeeeee;
 }
 
-.feature-highlight:last-child {
+#why-run .feature-card .feature-highlight:last-child {
     border-bottom: none;
 }
 
 
 /* Highlight icon */
 
-.highlight-icon {
+#why-run .feature-card .highlight-icon {
     grid-row: 1 / 3;
 
     display: flex;
@@ -727,12 +845,11 @@ letter-spacing:1px;
 
 /* Highlight title */
 
-.feature-highlight strong {
+#why-run .feature-card .feature-highlight strong {
     display: block;
 
-    font-size: 14px;
-    line-height: 1.35;
-
+    font-size: 13px;
+    line-height: 1.3;
     font-weight: 700;
 
     color: #111;
@@ -741,7 +858,7 @@ letter-spacing:1px;
 
 /* Highlight description */
 
-.feature-highlight small {
+#why-run .feature-card .feature-highlight small {
     display: block;
 
     margin-top: 2px;
@@ -754,91 +871,49 @@ letter-spacing:1px;
 
 
 /* =========================================================
-   RACE CATEGORIES
-   ========================================================= */
-
-/* =========================================================
-   FINAL WHY RUN WITH US — CLEAN OVERRIDES
-   Keep this block LAST
-   ========================================================= */
-
-#why-run .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0;
-    gap: 0;
-    align-items: stretch;
-}
-
-#why-run .feature-card {
-    width: 100%;
-    min-width: 0;
-    min-height: 430px;
-    margin: 0;
-    padding: 40px 30px;
-    box-sizing: border-box;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    text-align: center;
-
-    background: #fff;
-    border-radius: 0;
-    border-top: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
-    border-bottom: 1px solid #e5e5e5;
-    box-shadow: none;
-}
-
-/* Left edge */
-#why-run .feature-card:nth-child(3n + 1) {
-    border-left: 1px solid #e5e5e5;
-}
-
-/* Right edge */
-#why-run .feature-card:nth-child(3n) {
-    border-right: 1px solid #e5e5e5;
-}
-
-/* Race options stay inside first card */
-#why-run .race-feature .race-options {
-    width: 100%;
-    max-width: 100%;
-    margin: 28px auto 0;
-
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-/* Highlight groups */
-#why-run .feature-highlights {
-    width: 100%;
-    max-width: 100%;
-    margin: 26px auto 0;
-}
-
-/* =========================================================
    TABLET
    ========================================================= */
 
 @media (max-width: 900px) {
 
+    #why-run {
+        padding: 65px 30px;
+    }
+
     #why-run .feature-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    #why-run .feature-card {
+        min-height: 400px;
+        padding: 32px 24px;
+    }
+
 }
+
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
+
+    #why-run {
+        padding: 55px 18px;
+    }
+
+    #why-run .section-title {
+        margin-bottom: 30px;
+    }
+
+    #why-run .section-title h2 {
+        font-size: 27px;
+    }
+
+    #why-run .section-title p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
 
     #why-run .feature-grid {
         grid-template-columns: 1fr;
@@ -847,8 +922,10 @@ letter-spacing:1px;
     #why-run .feature-card {
         min-height: auto;
         padding: 32px 20px;
-        border-left: 1px solid #e5e5e5;
-        border-right: 1px solid #e5e5e5;
+    }
+
+    #why-run .feature-card > p {
+        min-height: auto;
     }
 
     #why-run .race-feature .race-options {
@@ -857,14 +934,32 @@ letter-spacing:1px;
 
 }
 
+
 /* =========================================================
    VERY SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 420px) {
 
+    #why-run {
+        padding: 45px 14px;
+    }
+
+    #why-run .feature-card {
+        padding: 28px 16px;
+    }
+
     #why-run .race-feature .race-options {
         grid-template-columns: 1fr;
+    }
+
+    #why-run .race-feature .race-option {
+        min-height: 95px;
+        border-right: none;
+    }
+
+    #why-run .feature-card .feature-highlights {
+        max-width: 100%;
     }
 
 }
