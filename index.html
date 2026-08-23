@@ -2471,6 +2471,109 @@ height:100%;
 border:0;
 }
 
+        /* =========================================================
+   EVENT TEASERS — 2024 + 2025
+   ========================================================= */
+
+.teaser-grid {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+.teaser-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #fff;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+
+    padding: 18px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.teaser-card-heading {
+    margin-bottom: 14px;
+}
+
+.teaser-card-heading span {
+    display: block;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #F7931E;
+
+    margin-bottom: 4px;
+}
+
+.teaser-card-heading h3 {
+    margin: 0;
+
+    font-size: 20px;
+    line-height: 1.3;
+
+    color: #111;
+}
+
+
+/* Video */
+
+.teaser-card .teaser-video {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+}
+
+.teaser-card .teaser-video iframe {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .teaser-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .teaser-card {
+        padding: 14px;
+    }
+
+    .teaser-card-heading h3 {
+        font-size: 18px;
+    }
+
+}
+
 </style>
 
     </head>
@@ -2596,43 +2699,80 @@ border:0;
 
             </section>
 
-            <!-- =========================
-            2024 TEASER
-            ========================= -->
+    <!-- =========================
+     EVENT TEASERS
+========================= -->
 
-            <section class="teaser-section">
+<section class="teaser-section">
 
-                <div class="teaser-container">
+    <div class="teaser-container">
 
-                    <div class="teaser-heading">
+        <div class="teaser-heading">
 
-                        <span>RELIVE THE EXPERIENCE</span>
+            <span>RELIVE THE EXPERIENCE</span>
 
-                        <h2>IIT Hyderabad Half Marathon 2024</h2>
+            <h2>IIT Hyderabad Half Marathon</h2>
 
-                        <p>
-                            Relive the energy, excitement and spirit
-                            of the IIT Hyderabad Half Marathon.
-                        </p>
+            <p>
+                Experience the energy, excitement and spirit
+                of our previous editions.
+            </p>
 
-                    </div>
+        </div>
 
-                    <div class="teaser-video">
 
-                        <iframe
+        <div class="teaser-grid">
+
+            <!-- 2024 -->
+            <div class="teaser-card">
+
+                <div class="teaser-card-heading">
+                    <span>2024</span>
+                    <h3>IIT Hyderabad Half Marathon 2024</h3>
+                </div>
+
+                <div class="teaser-video">
+
+                    <iframe
                         src="https://www.youtube.com/embed/_nYiBTeQ6tA"
                         title="IIT Hyderabad Half Marathon 2024 Teaser"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
-                        </iframe>
-
-                    </div>
+                    </iframe>
 
                 </div>
 
-            </section>
+            </div>
 
+
+            <!-- 2025 -->
+            <div class="teaser-card">
+
+                <div class="teaser-card-heading">
+                    <span>2025</span>
+                    <h3>IIT Hyderabad Half Marathon 2025</h3>
+                </div>
+
+                <div class="teaser-video">
+
+                    <iframe
+                        src="https://www.youtube.com/embed/EbikWh18x_s"
+                        title="IIT Hyderabad Half Marathon 2025 Teaser"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
             <!-- ==========================
             Countdown Placeholder
             =========================== -->
