@@ -2471,6 +2471,97 @@ height:100%;
 border:0;
 }
 
+
+/* =========================================================
+   EVENT TEASERS — SUBTLE INTERACTION
+   ========================================================= */
+
+.teaser-card {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* Soft animated accent line */
+.teaser-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #F7931E,
+        transparent
+    );
+    transition: left 0.6s ease;
+    z-index: 3;
+}
+
+/* Card hover */
+.teaser-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 55px rgba(14, 76, 146, 0.16);
+}
+
+/* Move the accent line across the card */
+.teaser-card:hover::before {
+    left: 100%;
+}
+
+/* Video hover effect */
+.teaser-card .teaser-video {
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.teaser-card:hover .teaser-video {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.20);
+}
+
+/* Very subtle zoom of the YouTube thumbnail */
+.teaser-card .teaser-video iframe {
+    transition: transform 0.6s ease;
+}
+
+.teaser-card:hover .teaser-video iframe {
+    transform: scale(1.015);
+}
+
+/* Year label */
+.teaser-card-heading span {
+    transition:
+        color 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+.teaser-card:hover .teaser-card-heading span {
+    color: #0E4C92;
+    letter-spacing: 2.5px;
+}
+
+/* Mobile — don't use hover movement */
+@media (max-width: 700px) {
+
+    .teaser-card:hover {
+        transform: none;
+        box-shadow: 0 15px 35px rgba(14, 76, 146, 0.10);
+    }
+
+    .teaser-card:hover .teaser-video iframe {
+        transform: none;
+    }
+
+    .teaser-card:hover::before {
+        left: -100%;
+    }
+}
         /* =========================================================
    EVENT TEASERS — 2024 + 2025
    ========================================================= */
