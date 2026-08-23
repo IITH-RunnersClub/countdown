@@ -2665,6 +2665,163 @@ border:0;
 
 }
 
+            /* ==============================
+   GALLERY LIGHTBOX
+   ============================== */
+
+.gallery-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.90);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+}
+
+.gallery-lightbox.active {
+    display: flex;
+}
+
+.gallery-lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    box-shadow: 0 25px 70px rgba(0,0,0,.45);
+
+    animation: galleryZoom .3s ease;
+}
+
+@keyframes galleryZoom {
+    from {
+        opacity: 0;
+        transform: scale(.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Close button */
+
+.gallery-close {
+    position: absolute;
+    top: 22px;
+    right: 30px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.15);
+    color: white;
+
+    font-size: 32px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.gallery-close:hover {
+    background: #F7931E;
+    transform: rotate(90deg);
+}
+
+/* Previous / Next */
+
+.gallery-prev,
+.gallery-next {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 52px;
+    height: 52px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.15);
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.gallery-prev {
+    left: 30px;
+}
+
+.gallery-next {
+    right: 30px;
+}
+
+.gallery-prev:hover,
+.gallery-next:hover {
+    background: #F7931E;
+    transform: translateY(-50%) scale(1.08);
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .gallery-lightbox {
+        padding: 20px;
+    }
+
+    .gallery-lightbox img {
+        max-width: 94vw;
+        max-height: 78vh;
+        border-radius: 8px;
+    }
+
+    .gallery-close {
+        top: 15px;
+        right: 15px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 28px;
+    }
+
+    .gallery-prev,
+    .gallery-next {
+        width: 42px;
+        height: 42px;
+
+        font-size: 22px;
+    }
+
+    .gallery-prev {
+        left: 10px;
+    }
+
+    .gallery-next {
+        right: 10px;
+    }
+}
+
 </style>
 
     </head>
@@ -3706,38 +3863,59 @@ Gallery
 
         </div>
 
-        <div class="gallery-grid">
+    <div class="gallery-grid">
 
-            <div class="gallery-item">
-                <img src="assets/images/gallery1.jpg" alt="Gallery 1">
-            </div>
+    <div class="gallery-item" onclick="openGallery(0)">
+        <img src="assets/images/gallery1.jpg" alt="IIT Hyderabad Half Marathon">
+    </div>
 
-            <div class="gallery-item">
-                <img src="assets/images/gallery2.jpg" alt="Gallery 2">
-            </div>
+    <div class="gallery-item" onclick="openGallery(1)">
+        <img src="assets/images/gallery2.jpg" alt="IIT Hyderabad Half Marathon">
+    </div>
 
-            <div class="gallery-item">
-                <img src="assets/images/gallery3.jpg" alt="Gallery 3">
-            </div>
+    <div class="gallery-item" onclick="openGallery(2)">
+        <img src="assets/images/gallery3.jpg" alt="IIT Hyderabad Half Marathon">
+    </div>
 
-            <div class="gallery-item">
-                <img src="assets/images/gallery4.jpg" alt="Gallery 4">
-            </div>
+    <div class="gallery-item" onclick="openGallery(3)">
+        <img src="assets/images/gallery4.jpg" alt="IIT Hyderabad Half Marathon">
+    </div>
 
-            <div class="gallery-item">
-                <img src="assets/images/gallery5.jpg" alt="Gallery 5">
-            </div>
+    <div class="gallery-item" onclick="openGallery(4)">
+        <img src="assets/images/gallery5.jpg" alt="IIT Hyderabad Half Marathon">
+    </div>
 
-            <div class="gallery-item">
-                <img src="assets/images/gallery6.jpg" alt="Gallery 6">
-            </div>
+    <div class="gallery-item" onclick="openGallery(5)">
+        <img src="assets/images/gallery6.jpg" alt="IIT Hyderabad Half Marathon">
+    </div>
 
-        </div>
+</div>
 
     </div>
 
 </section>
 
+        <!-- ==========================
+     Gallery Lightbox
+========================== -->
+
+<div id="galleryLightbox" class="gallery-lightbox">
+
+    <button class="gallery-close" onclick="closeGallery()">
+        &times;
+    </button>
+
+    <button class="gallery-prev" onclick="changeGallery(-1)">
+        &#10094;
+    </button>
+
+    <img id="galleryLightboxImage" src="" alt="Gallery Image">
+
+    <button class="gallery-next" onclick="changeGallery(1)">
+        &#10095;
+    </button>
+
+</div>
 <!-- ==========================
 Sponsors
 ========================== -->
@@ -4305,6 +4483,93 @@ nav.style.padding="18px 0";
 </script>
 
 <a href="#home" id="topBtn">↑</a>
+
+
+        <script>
+
+const galleryImages = [
+    "assets/images/gallery1.jpg",
+    "assets/images/gallery2.jpg",
+    "assets/images/gallery3.jpg",
+    "assets/images/gallery4.jpg",
+    "assets/images/gallery5.jpg",
+    "assets/images/gallery6.jpg"
+];
+
+let currentGalleryIndex = 0;
+
+function openGallery(index) {
+
+    currentGalleryIndex = index;
+
+    document.getElementById("galleryLightboxImage").src =
+        galleryImages[currentGalleryIndex];
+
+    document.getElementById("galleryLightbox").classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+function closeGallery() {
+
+    document.getElementById("galleryLightbox").classList.remove("active");
+
+    document.body.style.overflow = "";
+}
+
+function changeGallery(direction) {
+
+    currentGalleryIndex += direction;
+
+    if (currentGalleryIndex < 0) {
+        currentGalleryIndex = galleryImages.length - 1;
+    }
+
+    if (currentGalleryIndex >= galleryImages.length) {
+        currentGalleryIndex = 0;
+    }
+
+    document.getElementById("galleryLightboxImage").src =
+        galleryImages[currentGalleryIndex];
+}
+
+/* Keyboard controls */
+
+document.addEventListener("keydown", function(event) {
+
+    const lightbox =
+        document.getElementById("galleryLightbox");
+
+    if (!lightbox.classList.contains("active")) {
+        return;
+    }
+
+    if (event.key === "Escape") {
+        closeGallery();
+    }
+
+    if (event.key === "ArrowLeft") {
+        changeGallery(-1);
+    }
+
+    if (event.key === "ArrowRight") {
+        changeGallery(1);
+    }
+
+});
+
+/* Click outside image to close */
+
+document.getElementById("galleryLightbox")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+            closeGallery();
+        }
+
+    });
+
+</script>
 
 </body>
 
