@@ -3151,6 +3151,145 @@ border:0;
     }
 }
 
+
+/* =========================
+   PRIZE MONEY SECTION
+========================= */
+
+.prize-money-section {
+    padding: 90px 8%;
+    background: #F4F8FC;
+}
+
+.prize-money-section .section-heading {
+    margin-bottom: 50px;
+}
+
+.prize-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    align-items: stretch;
+}
+
+.prize-card {
+    padding: 32px 26px;
+    background: #FFFFFF;
+    border: 1px solid #E5EAF0;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prize-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 38px rgba(14, 76, 146, 0.12);
+}
+
+.prize-card.prize-featured {
+    border: 2px solid #F7931E;
+    background: linear-gradient(180deg, #FFF8EF, #FFFFFF);
+}
+
+.prize-badge {
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 30px;
+    background: #0E4C92;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.prize-featured .prize-badge {
+    background: #F7931E;
+}
+
+.prize-card h3 {
+    margin: 20px 0 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    color: #0E4C92;
+}
+
+.prize-distance {
+    margin-bottom: 22px;
+    color: #777;
+    font-size: 14px;
+}
+
+.prize-gender {
+    margin-bottom: 15px;
+    padding: 10px 6px;
+    border-radius: 8px;
+    background: #EAF2FB;
+    color: #0E4C92;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.prize-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 17px 0;
+    border-bottom: 1px solid #E9EDF2;
+    text-align: left;
+}
+
+.prize-row:last-child {
+    border-bottom: none;
+}
+
+.prize-row span {
+    color: #555;
+    font-size: 14px;
+}
+
+.prize-row strong {
+    color: #0E4C92;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 19px;
+    white-space: nowrap;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .prize-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .prize-money-section {
+        padding: 60px 18px;
+    }
+
+    .prize-money-section .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .prize-money-section .section-heading p {
+        font-size: 15px;
+    }
+
+    .prize-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .prize-card {
+        padding: 28px 22px;
+    }
+}
+        
+            
+
 </style>
 
     </head>
@@ -3203,6 +3342,8 @@ border:0;
                         <li><a href="#route">Route</a></li>
 
                         <li><a href="#faq">FAQ</a></li>
+
+                        <li><a href="#prize-money">Prize Money</a></li>
 
                     </ul>
 
@@ -3922,6 +4063,109 @@ border:0;
 </div>
 
     </section>
+
+
+<!-- =========================
+     PRIZE MONEY SECTION
+========================= -->
+
+<section id="prize-money" class="prize-money-section hidden">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Prize Money</h2>
+            <p>
+                Celebrate excellence at the IIT Hyderabad Half Marathon 2026.
+                Prize money is awarded separately to men and women.
+            </p>
+        </div>
+
+        <div class="prize-grid">
+
+            <!-- Half Marathon -->
+            <div class="prize-card prize-featured">
+
+                <span class="prize-badge">21.1K</span>
+                <h3>Half Marathon</h3>
+                <p class="prize-distance">21.097 KM</p>
+
+                <div class="prize-gender">MEN &amp; WOMEN — SEPARATELY</div>
+
+                <div class="prize-row">
+                    <span>🥇 1st Prize</span>
+                    <strong>₹10,000</strong>
+                </div>
+
+                <div class="prize-row">
+                    <span>🥈 2nd Prize</span>
+                    <strong>₹7,000</strong>
+                </div>
+
+                <div class="prize-row">
+                    <span>🥉 3rd Prize</span>
+                    <strong>₹5,000</strong>
+                </div>
+
+            </div>
+
+            <!-- 10K Run -->
+            <div class="prize-card">
+
+                <span class="prize-badge">10K</span>
+                <h3>10K Run</h3>
+                <p class="prize-distance">10 KM</p>
+
+                <div class="prize-gender">MEN &amp; WOMEN — SEPARATELY</div>
+
+                <div class="prize-row">
+                    <span>🥇 1st Prize</span>
+                    <strong>₹10,000</strong>
+                </div>
+
+                <div class="prize-row">
+                    <span>🥈 2nd Prize</span>
+                    <strong>₹7,000</strong>
+                </div>
+
+                <div class="prize-row">
+                    <span>🥉 3rd Prize</span>
+                    <strong>₹5,000</strong>
+                </div>
+
+            </div>
+
+            <!-- 5K Timed Run -->
+            <div class="prize-card">
+
+                <span class="prize-badge">5K</span>
+                <h3>5K Timed Run</h3>
+                <p class="prize-distance">5 KM</p>
+
+                <div class="prize-gender">MEN &amp; WOMEN — SEPARATELY</div>
+
+                <div class="prize-row">
+                    <span>🥇 1st Prize</span>
+                    <strong>₹10,000</strong>
+                </div>
+
+                <div class="prize-row">
+                    <span>🥈 2nd Prize</span>
+                    <strong>₹7,000</strong>
+                </div>
+
+                <div class="prize-row">
+                    <span>🥉 3rd Prize</span>
+                    <strong>₹5,000</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
         
 
