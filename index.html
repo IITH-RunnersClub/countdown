@@ -1857,11 +1857,29 @@ object-fit:contain;
     color: #666;
 }
             /* Highlight the Title Sponsor */
-.title-sponsor {
+/* Highlight the Title Sponsor */
+.sponsor-card.title-sponsor {
+    min-height: 335px;
+    padding: 28px 25px;
+    box-sizing: border-box;
+
     border: 2px solid #F7931E;
-    background: linear-gradient(180deg, #FFF8EF, #FFFFFF);
+    border-radius: 20px;
+
+    background: linear-gradient(
+        180deg,
+        #FFF8EF,
+        #FFFFFF
+    );
+
     box-shadow: 0 15px 35px rgba(247, 147, 30, 0.15);
-    transform: scale(1.03);
+
+    /* Keep the card aligned with other cards */
+    transform: none;
+}
+
+.sponsor-card.title-sponsor:hover {
+    transform: translateY(-8px);
 }
 
 .title-sponsor .sponsor-label {
@@ -1875,6 +1893,7 @@ object-fit:contain;
 
 .title-sponsor .sts-logo {
     width: 180px;
+    max-width: 100%;
     height: 80px;
     object-fit: contain;
     margin-bottom: 15px;
@@ -1884,7 +1903,6 @@ object-fit:contain;
     font-size: 16px;
     color: #0E4C92;
 }
-
 /*==========================
 FAQ
 ===========================*/
