@@ -1856,6 +1856,34 @@ object-fit:contain;
     font-weight: 500;
     color: #666;
 }
+            /* Highlight the Title Sponsor */
+.title-sponsor {
+    border: 2px solid #F7931E;
+    background: linear-gradient(180deg, #FFF8EF, #FFFFFF);
+    box-shadow: 0 15px 35px rgba(247, 147, 30, 0.15);
+    transform: scale(1.03);
+}
+
+.title-sponsor .sponsor-label {
+    display: inline-block;
+    color: #F7931E;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.title-sponsor .sts-logo {
+    width: 180px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.title-sponsor .sponsor-logo-text strong {
+    font-size: 16px;
+    color: #0E4C92;
+}
 
 /*==========================
 FAQ
@@ -4245,20 +4273,22 @@ Sponsors
 
         <div class="sponsor-grid">
 
-    <div class="sponsor-card">
-    <h3>Title Sponsor</h3>
+   
+<div class="sponsor-card title-sponsor">
+    <span class="sponsor-label">TITLE SPONSOR</span>
+
+    <img
+        src="assets/images/sts-logo.jpg"
+        alt="Swan Turbine Services Pvt Ltd (STS) Logo"
+        class="sts-logo"
+    >
 
     <div class="sponsor-logo-text">
-        <img
-            src="assets/images/sts-logo.jpg"
-            alt="Swan Turbine Services Pvt Ltd (STS) Logo"
-            class="sts-logo"
-        >
-
         <strong>Swan Turbine Services Pvt Ltd</strong>
         <span>(STS)</span>
     </div>
 </div>
+
 
             <div class="sponsor-card">
                 <h3>Powered By</h3>
